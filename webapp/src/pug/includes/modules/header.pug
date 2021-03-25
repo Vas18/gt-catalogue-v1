@@ -1,3 +1,17 @@
-header
-  div(class="l-container")
-    span I'm header
+header.header 
+  .container 
+    nav.navbar.navbar-expand-lg.d-flex.justify-content-between.align-items-center 
+      .d-flex.align-items-center 
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        a.navbar-brand(href='#') ЛОГОТИП
+      #navbarNav.collapse.navbar-collapse.flex-grow-0
+        ul.navbar-nav.mr-xl-4
+          li.nav-item.active
+            a.nav-link(href='#') ЗАКАЗАТЬ ТОВАР
+          li.nav-item
+            a.nav-link(href='#') ОНЛАЙН ШКОЛА
+          li.nav-item
+            a.nav-link(href='#') РЕЦЕПТЫ
+          li.nav-item
+        a.btn.ml-5(href="#") ВОЙТИ

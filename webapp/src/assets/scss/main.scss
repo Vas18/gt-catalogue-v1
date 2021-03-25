@@ -2,10 +2,27 @@
 @import "utils/vars";
 @import "utils/mixins";
 @import "utils/fonts";
-@import "utils/_reset";
-@import "utils/_normalize";
-@import "utils/_functions";
+@import "utils/base";
 
+@media (min-width: 1200px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1230px;
+  }
+}
+
+
+.btn {
+  background: #FFE600;
+  border-radius: 7px;
+  line-height: 42px;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  color: #000000;
+  padding: 0 30px;
+}
 p {
   font-size: 50px;
 }
+
+@import "modules/modules";

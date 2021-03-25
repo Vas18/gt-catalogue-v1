@@ -1,11 +1,53 @@
 @import "mixins";
 
+
 @font-face {
-  font-family: AvenirNextCyr-Demi;
-  src: local(avenirnext-demibold),
-  url('/assets/fonts/AvenirNextCyr-Demi.woff2') format("woff2"),
-  url('/assets/fonts/AvenirNextCyr-Demi.woff') format("woff"),
-  url('/assets/fonts/AvenirNextCyr-Demi.ttf') format("truetype");
+  font-family: 'SegoeUI';
+  src: local(SegoeUI-Light),
+  url('/assets/fonts/SegoeUI-Light.woff2') format("woff2"),
+  url('/assets/fonts/SegoeUI-Light.woff') format("woff"),
+  url('/assets/fonts/SegoeUI-Light.ttf') format("truetype");
   font-style: normal;
   font-stretch: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'SegoeUI';
+  src: local(SegoeUI),
+  url('/assets/fonts/SegoeUI.woff2') format("woff2"),
+  url('/assets/fonts/SegoeUI.woff') format("woff"),
+  url('/assets/fonts/SegoeUI.ttf') format("truetype");
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'SegoeUI';
+  src: local(SegoeUI-SemiBold),
+  url('/assets/fonts/SegoeUI-SemiBold.woff2') format("woff2"),
+  url('/assets/fonts/SegoeUI-SemiBold.woff') format("woff"),
+  url('/assets/fonts/SegoeUI-SemiBold.ttf') format("truetype");
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'SegoeUI';
+  src: local(SegoeUI-Bold),
+  url('/assets/fonts/SegoeUI-Bold.woff2') format("woff2"),
+  url('/assets/fonts/SegoeUI-Bold.woff') format("woff"),
+  url('/assets/fonts/SegoeUI-Bold.ttf') format("truetype");
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'SegoeUI';
+  src: local(SegoeUI-Bold),
+  url('/assets/fonts/SegoeUI-Bold.woff2') format("woff2"),
+  url('/assets/fonts/SegoeUI-Bold.woff') format("woff"),
+  url('/assets/fonts/SegoeUI-Bold.ttf') format("truetype");
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 700;
 }
