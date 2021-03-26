@@ -432,9 +432,52 @@
   padding-top: 56.25%;
   float: left;
 }
-.max-310 {
-  max-width: 310px
+.max-396 {
+  max-width: 396px
 }
-
+.b-Section_logo {
+  display: block;
+  margin-bottom: 25px;
+  width: 130px;
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+.s-PostPreview.__mode_inlineNew .s-PostPreview_b-Pic, .s-PostPreview.__mode_inlineNew .s-PostPreview_b-Video {
+  flex-shrink: 0;
+  width: 152px;
+  height: 100%;
+  min-height: 132px;
+}
+.s-PostPreview.__mode_inlineNew .s-PostPreview_b-Tag {
+  line-height: 1.6;
+  font-size: 10px;
+}
+.b-Section_titleAside {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+.b-ReportPreview {
+  display: block;
+  min-height: 110px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 1px 3px #cbcbcb;
+  box-shadow: 0 1px 3px #cbcbcb;
+  padding: 10px 20px;
+  &_date {
+    color: #a2a09d;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 1.6;
+  }
+  &_title {
+    font-weight: 600;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+}
 @import "modules/modules";
 @import "utils/media";
