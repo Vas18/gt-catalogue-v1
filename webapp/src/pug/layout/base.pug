@@ -9,11 +9,17 @@ html(lang='en')
         meta(charset='utf-8')
         title #{title}
         meta(name="description", content=description)
+        meta(name="viewport" content="width=376,initial-scale=1")
+        meta(name="keywords" content="")
 
     body(class=pageClass)
         include ../includes/modules/header
         div(class="content-wrapper")
             block content
         include ../includes/modules/footer
+        
+        //- script(href="https://code.jquery.com/jquery-3.6.0.min.js")
+        //- script(href="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js")
+        //- script(href="https://code.jquery.com/jquery-3.6.0.min.js")
 
     block script

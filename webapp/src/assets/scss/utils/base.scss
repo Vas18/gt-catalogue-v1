@@ -1,7 +1,7 @@
 html {
   font-family: $mainFont;
-  font-size: 16px;
-  line-height: 28px;
+  font-size: $baseFontSize;
+  line-height: 24px;
   height: 100%;
 }
 
@@ -9,8 +9,8 @@ body {
   height: 100%;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  font-size: 18px;
-  line-height: 25px;
+  font-size: $baseFontSize;
+  line-height: 24px;
   font-weight: 400;
   font-family: $mainFont;
   font-style: normal;
@@ -148,6 +148,11 @@ a {
   transition: all 0.3s ease;
   color: #000;
   display: block;
+  &:hover {
+    appearance: none;
+    text-decoration: none;
+    color: $black
+  }
 }
 
 p a {
