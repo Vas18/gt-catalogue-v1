@@ -1,4 +1,3 @@
-// import "./js/jquery-3.6.min.js";
 import "./js/bootstrap.min.js";
 import "./js/common.js";
 

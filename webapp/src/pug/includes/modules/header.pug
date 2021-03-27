@@ -3,19 +3,15 @@ header.header
     nav.navbar.navbar-expand-lg.d-flex.justify-content-between.align-items-center 
       a.navbar-brand(href='#') ЛОГОТИП
       .d-flex.align-items-center
-        
+
         ul.navbar-nav.mr-xl-4.pr-xl-3.d-lg-flex.d-none
-          li.nav-item.active
-            a.nav-link(href='#') ЗАКАЗАТЬ ТОВАР
-          li.nav-item
-            a.nav-link(href='#') ОНЛАЙН ШКОЛА
-          li.nav-item
-            a.nav-link(href='#') РЕЦЕПТЫ
-          li.nav-item
-          
+          each val, index in ['ЗАКАЗАТЬ ТОВАР','ОНЛАЙН ШКОЛА','РЕЦЕПТЫ']
+            li.nav-item(class=index==0 ? 'active':'')
+              a.nav-link(href='#')=val
+
         a#sign-in.btn.ml-5(href="#") ВОЙТИ
         button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation') МЕНЮ
-          img.navbar-toggler-icon(src="assets/img/burger.png", alt="burger")
+          img.navbar-toggler-icon(src="assets/img/burger.png" alt="burger")
 
 
 nav#navbarNav.collapse
@@ -24,21 +20,21 @@ nav#navbarNav.collapse
       a.btn.mr-4(href="#") ВОЙТИ
       a.btn-pink(href="#") РЕГИСТРАЦИЯ
     button.close(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
-      img(src="assets/img/close-menu.png", alt="close")
+      img(src="assets/img/close-menu.png" alt="close")
   .s-Navbar_b-Wrapper
     .s-Navbar_b-Nav#accordion
       .s-Navbar_b-TabBar
         a.s-Navbar_b-Tab.collapsed(href="#")
-          .s-Navbar_b-Tab_icon.__main
+          img.s-Navbar_b-Tab_icon.__main(src="assets/img/home.svg" alt="home")
           span.s-Navbar_b-Tab_title Главная
         .s-Navbar_b-Tab#headingOne.collapsed(type='button' data-toggle='collapse' data-target='#ideas' aria-controls='ideas' aria-expanded='false' aria-label='Toggle navigation')
-          .s-Navbar_b-Tab_icon.__posts
+          img.s-Navbar_b-Tab_icon.__posts(src="assets/img/photo-camera.svg" alt="photo-camera")
           span.s-Navbar_b-Tab_title Идеи
-        .s-Navbar_b-Tab#headingTwo.collapsed(type='button' data-toggle='collapse' data-target='#products' aria-controls='products'  aria-expanded='false' aria-label='Toggle navigation')
-          .s-Navbar_b-Tab_icon.__products
+        .s-Navbar_b-Tab#headingTwo.collapsed(type='button' data-toggle='collapse' data-target='#products' aria-controls='products' aria-expanded='true' aria-label='Toggle navigation')
+          img.s-Navbar_b-Tab_icon.__products(src="assets/img/sofa.svg" alt="sofa")
           span.s-Navbar_b-Tab_title Товары
         a.s-Navbar_b-Tab.collapsed(href="#")
-          .s-Navbar_b-Tab_icon.__profi
+          img.s-Navbar_b-Tab_icon.__profi(src="assets/img/safety.svg" alt="safety")
           span.s-Navbar_b-Tab_title Услуги
 
       .s-Navbar_b-Nav_container
@@ -403,11 +399,11 @@ nav#navbarNav.collapse
                 .s-Navbar_b-LevelSection_title &Vcy;&scy;&iecy; &kcy;&acy;&tcy;&iecy;&gcy;&ocy;&rcy;&icy;&icy;
                 ul.s-Navbar_b-LevelSection_children
                   li.s-Navbar_b-NavItem.__hasChildren
-                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel')
+                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                       .s-Navbar_b-NavLink_content
                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/a0/a031/a03199d1-f4fd-4048-94cf-69b378a9d4b4.png");')
                         span.s-Navbar_b-NavLink_title(style='') &Mcy;&yacy;&gcy;&kcy;&acy;&yacy; &mcy;&iecy;&bcy;&iecy;&lcy;&softcy;
-                    .s-Navbar_b-Level
+                    .s-Navbar_b-Level.lv-1
                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                       .s-Navbar_b-LevelSection
@@ -418,11 +414,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon.__allProducts
                                 span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel/divany')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/47/4745/47459051-a337-4f5f-a29b-d5f344f3b002.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Dcy;&icy;&vcy;&acy;&ncy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -433,11 +429,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon.__allProducts
                                         span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel/divany/pryamye-divany')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/8b/8bf4/8bf4b0e3-e722-4c38-a930-72ea8eb70803.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Pcy;&rcy;&yacy;&mcy;&ycy;&iecy; &dcy;&icy;&vcy;&acy;&ncy;&ycy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -478,11 +474,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/21/2111/2111c44d-b475-4b58-8b54-8c0677fbc59d.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &pcy;&rcy;&yacy;&mcy;&ycy;&khcy; &dcy;&icy;&vcy;&acy;&ncy;&ocy;&vcy;
                                           li.s-Navbar_b-NavItem.__hasChildren
-                                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel/divany/pryamye-divany/spm-dvuhmestnye')
+                                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                               .s-Navbar_b-NavLink_content
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/4a/4a29/4a29412d-b704-412a-a666-0d9a6712af6b.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Dcy;&vcy;&ucy;&khcy;&mcy;&iecy;&scy;&tcy;&ncy;&ycy;&iecy;
-                                            .s-Navbar_b-Level
+                                            .s-Navbar_b-Level.lv-4
                                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                               .s-Navbar_b-LevelSection
@@ -503,11 +499,11 @@ nav#navbarNav.collapse
                                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/82/8209/82099fe2-0d25-438e-94bc-ccb970f0e699.png");')
                                                         span.s-Navbar_b-NavLink_title(style='') &Scy;&ocy; &scy;&pcy;&acy;&lcy;&softcy;&ncy;&ycy;&mcy; &mcy;&iecy;&scy;&tcy;&ocy;&mcy;
                                           li.s-Navbar_b-NavItem.__hasChildren
-                                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel/divany/pryamye-divany/spm-trekhmestnye')
+                                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                               .s-Navbar_b-NavLink_content
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/e3/e3ef/e3ef29b0-cb85-4304-8f80-30ee5973a4fb.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Tcy;&rcy;&iecy;&khcy;&mcy;&iecy;&scy;&tcy;&ncy;&ycy;&iecy;
-                                            .s-Navbar_b-Level
+                                            .s-Navbar_b-Level.lv-4
                                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                               .s-Navbar_b-LevelSection
@@ -533,11 +529,11 @@ nav#navbarNav.collapse
                                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/ec/ec1e/ec1e33b0-f3a9-41ae-a3f2-344eca767d32.png");')
                                                         span.s-Navbar_b-NavLink_title(style='') &Ncy;&iecy;&dcy;&ocy;&rcy;&ocy;&gcy;&icy;&iecy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel/divany/uglovye-divany')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/6a/6a0b/6a0b699d-06bb-4170-b59c-3c391885cec9.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Ucy;&gcy;&lcy;&ocy;&vcy;&ycy;&iecy; &dcy;&icy;&vcy;&acy;&ncy;&ycy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -573,11 +569,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/f7/f7b6/f7b640f9-4300-428a-b133-b7107a1841d3.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &ucy;&gcy;&lcy;&ocy;&vcy;&ycy;&khcy; &dcy;&icy;&vcy;&acy;&ncy;&ocy;&vcy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel/divany/spm-so-spalnym-mestom')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/7a/7a7f/7a7f6190-45ef-43c9-98f7-612fd388893a.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Scy;&ocy; &scy;&pcy;&acy;&lcy;&softcy;&ncy;&ycy;&mcy; &mcy;&iecy;&scy;&tcy;&ocy;&mcy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -618,11 +614,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/1d/1d16/1d163268-1058-4d65-8311-e6ad7c35eb24.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &dcy;&icy;&vcy;&acy;&ncy;&ocy;&vcy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel/kresla')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/59/592d/592d3036-2abb-4361-9a4b-716bf1479f4b.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Kcy;&rcy;&iecy;&scy;&lcy;&acy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -633,11 +629,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon.__allProducts
                                         span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel/kresla/nze-dlya-otdyha')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/64/6444/6444e563-ca7b-416b-b654-2f39a27a01f6.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Dcy;&lcy;&yacy; &ocy;&tcy;&dcy;&ycy;&khcy;&acy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -668,11 +664,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/71/719e/719e0e8a-5120-40a0-a8f5-db8bd9f8fec5.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Mcy;&acy;&lcy;&iecy;&ncy;&softcy;&kcy;&icy;&iecy; &kcy;&rcy;&iecy;&scy;&lcy;&acy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel/kresla/xtk-stul-kreslo')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/29/29b3/29b3329c-93d9-4290-8713-8bc713e886dd.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Kcy;&rcy;&iecy;&scy;&lcy;&ocy;-&scy;&tcy;&ucy;&lcy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -703,11 +699,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/fd/fdc8/fdc8cdd5-ca54-465d-b711-900503cf4784.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Kcy;&rcy;&iecy;&scy;&lcy;&acy;-&kcy;&acy;&chcy;&acy;&lcy;&kcy;&icy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel/ofisnye-kresla')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/5e/5ec3/5ec3743e-5fbb-463d-8c7d-ff529ef1e2c6.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Ocy;&fcy;&icy;&scy;&ncy;&ycy;&iecy; &kcy;&rcy;&iecy;&scy;&lcy;&acy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -723,11 +719,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/dc/dc5f/dc5f6242-0199-4424-819f-1743e5b4a98e.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &ocy;&fcy;&icy;&scy;&ncy;&ycy;&khcy; &kcy;&rcy;&iecy;&scy;&iecy;&lcy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel/pufy-i-banketki')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/9a/9a37/9a379d18-5157-4075-8ca6-3b2d2242f037.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Pcy;&ucy;&fcy;&ycy; &icy; &bcy;&acy;&ncy;&kcy;&iecy;&tcy;&kcy;&icy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -738,11 +734,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon.__allProducts
                                         span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel/pufy-i-banketki/pufy')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/3a/3a03/3a03d0e6-992d-4331-9a6b-953e3aebaf6c.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Pcy;&ucy;&fcy;&ycy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -773,11 +769,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/15/1571/15717e41-815b-4422-a7e3-607dadd5a53b.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Mcy;&yacy;&gcy;&kcy;&icy;&iecy; &pcy;&ucy;&fcy;&ycy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel/pufy-i-banketki/banketki')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/79/798b/798b2978-8ea1-4c0d-8395-d52a2dedd7c3.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Bcy;&acy;&ncy;&kcy;&iecy;&tcy;&kcy;&icy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -798,11 +794,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/9e/9e51/9e512312-34e6-45a1-9563-09ee41d07c2d.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Vcy; &scy;&pcy;&acy;&lcy;&softcy;&ncy;&yucy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel/kushetki')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/7b/7ba0/7ba0f2ce-b358-45cc-97f1-800b48383cc7.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Kcy;&ucy;&shcy;&iecy;&tcy;&kcy;&icy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -818,11 +814,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/58/586a/586a8096-2016-4042-8c2a-928c60500a9c.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &kcy;&ucy;&shcy;&iecy;&tcy;&ocy;&kcy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/myagkaya-mebel/beskarkasnaya-mebel')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/13/13c5/13c55156-7794-4751-ab84-4dd56e0bae61.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Bcy;&iecy;&scy;&kcy;&acy;&rcy;&kcy;&acy;&scy;&ncy;&acy;&yacy; &mcy;&iecy;&bcy;&iecy;&lcy;&softcy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -848,11 +844,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/4d/4d02/4d02c7b6-0938-4297-a626-8aedc616d6b9.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Kcy;&rcy;&iecy;&scy;&lcy;&acy;-&lcy;&iecy;&zhcy;&acy;&kcy;&icy;
                   li.s-Navbar_b-NavItem.__hasChildren
-                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel')
+                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                       .s-Navbar_b-NavLink_content
                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/cc/cccf/cccf8973-7b45-4e22-84ab-2e3d6f631ca8.png");')
                         span.s-Navbar_b-NavLink_title(style='') &Mcy;&iecy;&bcy;&iecy;&lcy;&softcy;
-                    .s-Navbar_b-Level
+                    .s-Navbar_b-Level.lv-1
                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                       .s-Navbar_b-LevelSection
@@ -863,11 +859,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon.__allProducts
                                 span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/krovati')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/ba/babd/babd49b2-216c-4ce0-a0e1-89c945c89b7e.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Kcy;&rcy;&ocy;&vcy;&acy;&tcy;&icy; &icy; &mcy;&acy;&tcy;&rcy;&acy;&scy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -878,11 +874,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon.__allProducts
                                         span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/krovati/krovati-dlya-spalni')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/c6/c6ec/c6ecc1b8-4bfd-430d-9210-bfe64bb72382.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Kcy;&rcy;&ocy;&vcy;&acy;&tcy;&icy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -903,11 +899,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/f6/f638/f6385178-c392-4f35-bdd6-9cf60f2b8cde.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Dcy;&vcy;&ucy;&scy;&pcy;&acy;&lcy;&softcy;&ncy;&ycy;&iecy;
                                           li.s-Navbar_b-NavItem.__hasChildren
-                                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/krovati/krovati-dlya-spalni/kvy-s-yashchikami')
+                                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                               .s-Navbar_b-NavLink_content
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/0a/0a94/0a945c1e-2e05-432d-92c1-929972b0516d.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Scy; &yacy;&shchcy;&icy;&kcy;&ocy;&mcy; &dcy;&lcy;&yacy; &khcy;&rcy;&acy;&ncy;&iecy;&ncy;&icy;&yacy;
-                                            .s-Navbar_b-Level
+                                            .s-Navbar_b-Level.lv-4
                                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                               .s-Navbar_b-LevelSection
@@ -928,11 +924,11 @@ nav#navbarNav.collapse
                                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/7e/7ea1/7ea1fb8f-7235-44aa-8d7d-c902c6b4b44b.png");')
                                                         span.s-Navbar_b-NavLink_title(style='') &Dcy;&vcy;&ucy;&scy;&pcy;&acy;&lcy;&softcy;&ncy;&ycy;&iecy; &kcy;&rcy;&ocy;&vcy;&acy;&tcy;&icy;
                                           li.s-Navbar_b-NavItem.__hasChildren
-                                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/krovati/krovati-dlya-spalni/izg-s-mjagkim-izgolovem')
+                                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                               .s-Navbar_b-NavLink_content
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/68/68b8/68b83ed9-0249-48aa-8d14-04474679b0d6.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Scy; &mcy;&yacy;&gcy;&kcy;&icy;&mcy; &icy;&zcy;&gcy;&ocy;&lcy;&ocy;&vcy;&softcy;&iecy;&mcy;
-                                            .s-Navbar_b-Level
+                                            .s-Navbar_b-Level.lv-4
                                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                               .s-Navbar_b-LevelSection
@@ -963,11 +959,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/56/5644/564464e0-450d-40f7-9ad9-7d0a8dbe72bd.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &kcy;&rcy;&ocy;&vcy;&acy;&tcy;&iecy;&jcy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/krovati/detskie-krovati')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/4a/4a4c/4a4c3f2e-6b2b-46fa-b31e-26953db789e6.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Dcy;&iecy;&tcy;&scy;&kcy;&icy;&iecy; &kcy;&rcy;&ocy;&vcy;&acy;&tcy;&icy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1002,11 +998,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/dd/dd1b/dd1b638c-20bb-438a-a78e-7d2992a003c8.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Scy;&pcy;&acy;&lcy;&softcy;&ncy;&ycy;&iecy; &gcy;&acy;&rcy;&ncy;&icy;&tcy;&ucy;&rcy;&ycy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/krovati/matrasy')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/88/885a/885ad261-fb00-4dbd-90a0-f061066c6ebc.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Mcy;&acy;&tcy;&rcy;&acy;&scy;&ycy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1047,11 +1043,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/f2/f2d0/f2d0c493-1cbb-4872-9714-07804552a6bf.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Icy;&zcy;&gcy;&ocy;&lcy;&ocy;&vcy;&softcy;&yacy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stoly')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/9b/9bfb/9bfbc027-0b61-4dd8-b4e7-839f65709dba.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Scy;&tcy;&ocy;&lcy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -1062,11 +1058,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon.__allProducts
                                         span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stoly/obedennye-stoly')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/06/06ac/06ac75b5-afdb-4255-b2cf-baf32f9f1d7f.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Ocy;&bcy;&iecy;&dcy;&iecy;&ncy;&ncy;&ycy;&iecy; &scy;&tcy;&ocy;&lcy;&ycy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1107,11 +1103,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/40/40c9/40c94aea-aadf-494d-9a00-1ce7419f90e9.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &scy;&tcy;&ocy;&lcy;&ocy;&vcy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stoly/zhurnalnye-stoliki')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/41/41e6/41e6178e-401d-4d2e-be3a-c457af1b6a41.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &ZHcy;&ucy;&rcy;&ncy;&acy;&lcy;&softcy;&ncy;&ycy;&iecy; &icy; &kcy;&ocy;&fcy;&iecy;&jcy;&ncy;&ycy;&iecy; &scy;&tcy;&ocy;&lcy;&icy;&kcy;&icy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1122,11 +1118,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon.__allProducts
                                                 span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                                           li.s-Navbar_b-NavItem.__hasChildren
-                                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stoly/zhurnalnye-stoliki/kofejnye-stoliki')
+                                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                               .s-Navbar_b-NavLink_content
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/1d/1d42/1d420fff-2214-4249-abd4-fb11888e04b4.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Kcy;&ocy;&fcy;&iecy;&jcy;&ncy;&ycy;&iecy; &scy;&tcy;&ocy;&lcy;&icy;&kcy;&icy;
-                                            .s-Navbar_b-Level
+                                            .s-Navbar_b-Level.lv-4
                                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                               .s-Navbar_b-LevelSection
@@ -1142,11 +1138,11 @@ nav#navbarNav.collapse
                                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/e0/e0dc/e0dcf54d-401d-4b42-8908-4f8299d311ce.png");')
                                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &kcy;&ocy;&fcy;&iecy;&jcy;&ncy;&ycy;&khcy; &scy;&tcy;&ocy;&lcy;&icy;&kcy;&ocy;&vcy;
                                           li.s-Navbar_b-NavItem.__hasChildren
-                                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stoly/zhurnalnye-stoliki/zhurnalnye-stoliki')
+                                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                               .s-Navbar_b-NavLink_content
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/5e/5ee0/5ee0692b-e198-4313-b664-528dc54103d9.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &ZHcy;&ucy;&rcy;&ncy;&acy;&lcy;&softcy;&ncy;&ycy;&iecy; &scy;&tcy;&ocy;&lcy;&icy;&kcy;&icy;
-                                            .s-Navbar_b-Level
+                                            .s-Navbar_b-Level.lv-4
                                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                               .s-Navbar_b-LevelSection
@@ -1182,11 +1178,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/a0/a0e5/a0e5b812-dd70-4ab4-af02-2bff8815f495.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &scy;&tcy;&ocy;&lcy;&icy;&kcy;&ocy;&vcy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stoly/tualetnye-stoliki')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/47/4756/475653f1-f766-4227-94a1-ce0ccdbe5f67.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Tcy;&ucy;&acy;&lcy;&iecy;&tcy;&ncy;&ycy;&iecy; &scy;&tcy;&ocy;&lcy;&icy;&kcy;&icy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1212,11 +1208,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/12/1205/120551e9-3cb8-46b1-b082-30c3d4b59777.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &tcy;&ucy;&acy;&lcy;&iecy;&tcy;&ncy;&ycy;&khcy; &scy;&tcy;&ocy;&lcy;&icy;&kcy;&ocy;&vcy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stoly/pismennye-stoly')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/4e/4e8c/4e8c3cb7-726f-49c2-9de3-4dbc6126b563.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Pcy;&icy;&scy;&softcy;&mcy;&iecy;&ncy;&ncy;&ycy;&iecy; &scy;&tcy;&ocy;&lcy;&ycy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1242,11 +1238,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/b5/b5f3/b5f37b1f-d9f2-4651-aea5-5bbf6cc66c49.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &pcy;&icy;&scy;&softcy;&mcy;&iecy;&ncy;&ncy;&ycy;&khcy; &scy;&tcy;&ocy;&lcy;&ocy;&vcy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stoly/konsolnye-stoly')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/23/2395/2395c55d-0b0c-4ac4-a403-737798f0e5b7.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Kcy;&ocy;&ncy;&scy;&ocy;&lcy;&softcy;&ncy;&ycy;&iecy; &scy;&tcy;&ocy;&lcy;&ycy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1272,11 +1268,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/8f/8f4e/8f4ea068-811e-47ea-a042-2ca3552ffb33.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &kcy;&ocy;&ncy;&scy;&ocy;&lcy;&softcy;&ncy;&ycy;&khcy; &scy;&tcy;&ocy;&lcy;&ocy;&vcy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stoly/ofisnye-stoly')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/2f/2fe2/2fe22cb5-74d7-488e-b4fe-0af2553cb49c.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Ocy;&fcy;&icy;&scy;&ncy;&ycy;&iecy; &scy;&tcy;&ocy;&lcy;&ycy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1292,11 +1288,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/20/20f4/20f4acf8-ec4f-46af-a1d4-f9f5a0b02194.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &ocy;&fcy;&icy;&scy;&ncy;&ycy;&khcy; &scy;&tcy;&ocy;&lcy;&ocy;&vcy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stoly/detskie-stoly')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/67/671c/671ca882-939c-44b7-aa92-5ac1d72b3b04.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Dcy;&iecy;&tcy;&scy;&kcy;&icy;&iecy; &scy;&tcy;&ocy;&lcy;&ycy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1322,11 +1318,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/49/49e1/49e17ea6-15a7-4a87-a62a-81df8dd75cd3.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Scy;&tcy;&ocy;&lcy;&ycy; &dcy;&lcy;&yacy; &shcy;&kcy;&ocy;&lcy;&softcy;&ncy;&icy;&kcy;&ocy;&vcy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stoly/servirovochnye-stoliki')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/4c/4cc2/4cc24edd-fb59-4884-b915-bf8b9ad81772.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Scy;&iecy;&rcy;&vcy;&icy;&rcy;&ocy;&vcy;&ocy;&chcy;&ncy;&ycy;&iecy; &scy;&tcy;&ocy;&lcy;&icy;&kcy;&icy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1342,11 +1338,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/13/1318/1318dc34-f1cb-4b45-9e6a-6f5cf009be07.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &scy;&iecy;&rcy;&vcy;&icy;&rcy;&ocy;&vcy;&ocy;&chcy;&ncy;&ycy;&khcy; &scy;&tcy;&ocy;&lcy;&icy;&kcy;&ocy;&vcy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stoly/barnye-stoly')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/19/1997/1997c099-78bf-4c37-9cb8-f6a817ff4903.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Bcy;&acy;&rcy;&ncy;&ycy;&iecy; &scy;&tcy;&ocy;&lcy;&ycy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1362,11 +1358,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/7f/7f05/7f05ee9d-6628-4612-a6f3-74c570d5782d.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &bcy;&acy;&rcy;&ncy;&ycy;&khcy; &scy;&tcy;&ocy;&lcy;&ocy;&vcy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stulya')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/cd/cd99/cd990e09-ac7a-48a6-a941-6382198c2a66.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Scy;&tcy;&ucy;&lcy;&softcy;&yacy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -1377,11 +1373,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon.__allProducts
                                         span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stulya/obedennye-stulya-i-skameyki')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/ec/ecff/ecffccc6-7d83-4aca-a0d1-8cd1c4dfdc27.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Ocy;&bcy;&iecy;&dcy;&iecy;&ncy;&ncy;&ycy;&iecy; &scy;&tcy;&ucy;&lcy;&softcy;&yacy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1422,11 +1418,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/04/04c5/04c550f1-0585-4b58-858d-f5e2009bd1ab.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &ocy;&bcy;&iecy;&dcy;&iecy;&ncy;&ncy;&ycy;&khcy; &scy;&tcy;&ucy;&lcy;&softcy;&iecy;&vcy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stulya/barnye-stulya')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/a0/a0e5/a0e50e0a-3c8c-4ad9-91d2-58a925ecbcf4.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Bcy;&acy;&rcy;&ncy;&ycy;&iecy; &scy;&tcy;&ucy;&lcy;&softcy;&yacy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1462,11 +1458,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/bb/bb75/bb75670a-9030-49e2-b7b8-3999e2e17d1d.png");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Bcy;&acy;&rcy;&ncy;&ycy;&iecy; &tcy;&acy;&bcy;&ucy;&rcy;&iecy;&tcy;&ycy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stulya/con-myagkie')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/4c/4c5b/4c5be940-028f-4ef3-b05d-ae461d26906f.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Mcy;&yacy;&gcy;&kcy;&icy;&iecy; &scy;&tcy;&ucy;&lcy;&softcy;&yacy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1502,11 +1498,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/dc/dcb2/dcb2b8d7-522e-4f1e-b110-b77a4d056613.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Pcy;&lcy;&acy;&scy;&tcy;&icy;&kcy;&ocy;&vcy;&ycy;&iecy; &scy;&tcy;&ucy;&lcy;&softcy;&yacy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/stulya/detskie-stulya')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/ad/ad48/ad484824-9933-488b-a425-c35007e9c222.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Dcy;&iecy;&tcy;&scy;&kcy;&icy;&iecy; &scy;&tcy;&ucy;&lcy;&softcy;&yacy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1532,11 +1528,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/59/5995/59952a2b-47b1-46d5-86f3-cd4412db6ed1.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &scy;&tcy;&ucy;&lcy;&softcy;&iecy;&vcy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/komody')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/6c/6c7d/6c7dab8a-d553-40e4-94f6-5e809967d20c.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Kcy;&ocy;&mcy;&ocy;&dcy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -1567,11 +1563,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/f4/f43c/f43cf1fe-96c8-484c-a845-7a9c49af3695.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Dcy;&iecy;&tcy;&scy;&kcy;&icy;&iecy; &kcy;&ocy;&mcy;&ocy;&dcy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/tumby')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/0d/0dfd/0dfdbd13-814e-4d03-9d9e-bc49704821aa.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Tcy;&ucy;&mcy;&bcy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -1602,11 +1598,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/cf/cf4f/cf4fa769-cbd2-4464-a9a4-d1b90f0a3859.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Tcy;&ucy;&mcy;&bcy;&ycy; &dcy;&lcy;&yacy; &vcy;&acy;&ncy;&ncy;&ocy;&jcy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/shkafy')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/02/027e/027eca0f-a397-47f5-9407-15fe8f5ebffd.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &SHcy;&kcy;&acy;&fcy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -1622,11 +1618,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/45/4573/45734789-e317-4e23-bae4-b73ce7d764cf.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&acy;&shcy;&ncy;&ycy;&iecy; &shcy;&kcy;&acy;&fcy;&ycy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/shkafy/shkafy-platyanye')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/cf/cf0f/cf0f69b9-9346-41d7-a1a5-df4fb65dd5b3.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &SHcy;&kcy;&acy;&fcy;&ycy; &pcy;&lcy;&acy;&tcy;&yacy;&ncy;&ycy;&iecy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -1722,11 +1718,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/27/277c/277c1448-e114-4f23-acc4-13602d21696b.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Scy;&tcy;&iecy;&lcy;&lcy;&acy;&zhcy;&icy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/garnitury')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/75/750c/750cb5e4-8c07-40bc-bf14-432ba1a3a634.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Gcy;&acy;&rcy;&ncy;&icy;&tcy;&ucy;&rcy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -1757,11 +1753,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/bb/bb61/bb61200e-2a4e-4535-b1ed-69113d0207e9.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Dcy;&iecy;&tcy;&scy;&kcy;&icy;&iecy; &gcy;&acy;&rcy;&ncy;&icy;&tcy;&ucy;&rcy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/mebel-dlya-tv-i-media')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/78/784d/784dbf0a-d1ad-458b-8db4-15bc4a90531b.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Mcy;&iecy;&bcy;&iecy;&lcy;&softcy; &dcy;&lcy;&yacy; &Tcy;&Vcy; &icy; &mcy;&iecy;&dcy;&icy;&acy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -1812,11 +1808,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/fa/fac6/fac6e680-ae5f-4f72-8d5f-34500066541a.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Scy;&ucy;&ncy;&dcy;&ucy;&kcy;&icy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/mebel/sadovaya-mebel')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/5c/5c77/5c77b6f9-3efa-4f53-b220-343b700d4c3e.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Scy;&acy;&dcy;&ocy;&vcy;&acy;&yacy; &mcy;&iecy;&bcy;&iecy;&lcy;&softcy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -1877,11 +1873,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/46/468b/468b9205-a82e-4cea-9124-3438ec9d0428.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Mcy;&iecy;&bcy;&iecy;&lcy;&softcy; &dcy;&lcy;&yacy; &dcy;&ocy;&mcy;&acy;&shcy;&ncy;&icy;&khcy; &pcy;&icy;&tcy;&ocy;&mcy;&tscy;&iecy;&vcy;
                   li.s-Navbar_b-NavItem.__hasChildren
-                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/osveschenie')
+                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                       .s-Navbar_b-NavLink_content
                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/48/48d1/48d12603-dd5e-47e8-b9f7-860999e916af.png");')
                         span.s-Navbar_b-NavLink_title(style='') &Ocy;&scy;&vcy;&iecy;&shchcy;&iecy;&ncy;&icy;&iecy;
-                    .s-Navbar_b-Level
+                    .s-Navbar_b-Level.lv-1
                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                       .s-Navbar_b-LevelSection
@@ -1892,11 +1888,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon.__allProducts
                                 span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/osveschenie/lyustry')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/44/44a2/44a24109-2d5a-46ca-8949-9927aaa2861b.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Lcy;&yucy;&scy;&tcy;&rcy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -1932,11 +1928,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/84/8423/8423da58-deb2-4249-9cba-6fdc303609b5.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &lcy;&yucy;&scy;&tcy;&rcy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/osveschenie/svetilniki')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/02/0253/02537c5f-4631-4fd9-9708-8aa1c030960e.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Scy;&vcy;&iecy;&tcy;&icy;&lcy;&softcy;&ncy;&icy;&kcy;&icy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -1982,11 +1978,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/14/14b4/14b412de-3640-4c98-a304-e9e615cee99c.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Ncy;&acy;&kcy;&lcy;&acy;&dcy;&ncy;&ycy;&iecy; &scy;&vcy;&iecy;&tcy;&icy;&lcy;&softcy;&ncy;&icy;&kcy;&icy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/osveschenie/spoty')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/04/0483/04833a70-e282-4ab3-b843-6abf536980b1.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Scy;&pcy;&ocy;&tcy;&ycy; &icy; &tcy;&rcy;&iecy;&kcy;-&scy;&icy;&scy;&tcy;&iecy;&mcy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2017,11 +2013,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/ef/ef6a/ef6a6672-7c40-4b17-a841-30567bd633d0.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &scy;&pcy;&ocy;&tcy;&ocy;&vcy; &icy; &tcy;&rcy;&iecy;&kcy;-&scy;&icy;&scy;&tcy;&iecy;&mcy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/osveschenie/bra')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/77/7704/7704e720-5ed5-4120-a642-3ce2fdbe3375.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Bcy;&rcy;&acy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2062,11 +2058,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/27/2795/27956e5b-82e8-4972-b210-263804467376.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &bcy;&rcy;&acy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/osveschenie/torshery-i-napolnye-svetilniki')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/8a/8a39/8a397230-1094-4a5d-8a97-f2b4942d274b.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Tcy;&ocy;&rcy;&shcy;&iecy;&rcy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2082,11 +2078,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/01/012e/012e2b03-e2a7-42ea-83de-71fd8befb129.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &tcy;&ocy;&rcy;&shcy;&iecy;&rcy;&ocy;&vcy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/osveschenie/nastolnye-svetilniki')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/ff/ff17/ff17fc87-1eb7-40b0-833c-79ff35962b13.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Ncy;&acy;&scy;&tcy;&ocy;&lcy;&softcy;&ncy;&ycy;&iecy; &lcy;&acy;&mcy;&pcy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2112,11 +2108,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/13/13f2/13f2b2af-5895-4ccc-88f6-2800e7b359a3.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &ncy;&acy;&scy;&tcy;&ocy;&lcy;&softcy;&ncy;&ycy;&khcy; &lcy;&acy;&mcy;&pcy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/osveschenie/detskie-svetilniki')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/b8/b824/b8242c83-8191-4da7-b9a2-278024bc36b9.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Scy;&vcy;&iecy;&tcy;&icy;&lcy;&softcy;&ncy;&icy;&kcy;&icy; &vcy; &dcy;&iecy;&tcy;&scy;&kcy;&ucy;&yucy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2157,11 +2153,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/e1/e10b/e10b1667-a26c-4414-bb64-99cc64849cfb.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &dcy;&iecy;&tcy;&scy;&kcy;&icy;&khcy; &scy;&vcy;&iecy;&tcy;&icy;&lcy;&softcy;&ncy;&icy;&kcy;&ocy;&vcy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/osveschenie/ulichnyy-svet')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/0f/0fa6/0fa6406c-9f6e-4b39-b8f1-bc8c10da9be8.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Ucy;&lcy;&icy;&chcy;&ncy;&ycy;&iecy; &scy;&vcy;&iecy;&tcy;&icy;&lcy;&softcy;&ncy;&icy;&kcy;&icy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2197,11 +2193,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/b3/b38e/b38e61ec-6b0a-4b6a-a95a-4683330996bb.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &ucy;&lcy;&icy;&chcy;&ncy;&ycy;&khcy; &scy;&vcy;&iecy;&tcy;&icy;&lcy;&softcy;&ncy;&icy;&kcy;&ocy;&vcy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/osveschenie/komplektuyushchie')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/f9/f9de/f9de738c-2c5c-4fbd-b83b-54e026f14ece.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Vcy;&ycy;&kcy;&lcy;&yucy;&chcy;&acy;&tcy;&iecy;&lcy;&icy; &icy; &kcy;&ocy;&mcy;&pcy;&lcy;&iecy;&kcy;&tcy;&ucy;&yucy;&shchcy;&icy;&iecy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2237,11 +2233,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/c6/c658/c658df66-da48-45b6-a74e-f4fd32661806.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&mcy;&kcy;&icy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/osveschenie/komplektuyushchie/dekorativnye-lampochki')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/47/4700/4700b269-b228-4c18-ae92-44687e3eea19.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Lcy;&acy;&mcy;&pcy;&ocy;&chcy;&kcy;&icy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -2287,11 +2283,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/c7/c7b6/c7b60319-6dd8-4f6b-ae67-667d61e767f0.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Ocy;&scy;&ncy;&ocy;&vcy;&acy;&ncy;&icy;&yacy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/osveschenie/podsvetka-dlya-kartin')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/0d/0d4f/0d4f9cc3-059f-4ab5-b9d0-c1489dedd26a.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Pcy;&ocy;&dcy;&scy;&vcy;&iecy;&tcy;&kcy;&acy; &dcy;&lcy;&yacy; &kcy;&acy;&rcy;&tcy;&icy;&ncy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2312,11 +2308,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/28/28b2/28b218af-f586-4910-bcee-389f1fd7d4a6.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Gcy;&icy;&rcy;&lcy;&yacy;&ncy;&dcy;&ycy;
                   li.s-Navbar_b-NavItem.__hasChildren
-                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/hranenie')
+                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                       .s-Navbar_b-NavLink_content
                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/20/20d8/20d8d2d3-ce72-475d-84b5-30be6604cbef.png");')
                         span.s-Navbar_b-NavLink_title(style='') &KHcy;&rcy;&acy;&ncy;&iecy;&ncy;&icy;&iecy;
-                    .s-Navbar_b-Level
+                    .s-Navbar_b-Level.lv-1
                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                       .s-Navbar_b-LevelSection
@@ -2327,11 +2323,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon.__allProducts
                                 span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/hranenie/shkafy')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/1a/1a69/1a691311-dd4e-4c10-9cba-98f29b50ff72.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &SHcy;&kcy;&acy;&fcy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2395,11 +2391,11 @@ nav#navbarNav.collapse
                                       .s-Navbar_b-NavLink_content
                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &shcy;&kcy;&acy;&fcy;&ocy;&vcy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/hranenie/komody')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/4f/4f71/4f711947-11f1-4889-9dc4-2c8dfde61e06.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Kcy;&ocy;&mcy;&ocy;&dcy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2419,11 +2415,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/36/368f/368fee93-6f12-46ba-951b-2d1767b8d106.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Dcy;&iecy;&tcy;&scy;&kcy;&icy;&iecy; &kcy;&ocy;&mcy;&ocy;&dcy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/hranenie/tumby')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/3b/3b91/3b9108c6-29db-4e0b-8a60-d25fbad12e84.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Tcy;&ucy;&mcy;&bcy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2494,11 +2490,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/ac/ac5c/ac5c59ae-eeb5-4f5e-bf3d-c08a720a2e9e.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Kcy;&lcy;&yucy;&chcy;&ncy;&icy;&tscy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/hranenie/veshalki')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/cf/cf72/cf727556-6cfb-4ea3-8828-b049ce70f867.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Vcy;&iecy;&shcy;&acy;&lcy;&kcy;&icy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2533,11 +2529,11 @@ nav#navbarNav.collapse
                               .s-Navbar_b-NavLink_content
                                 span.s-Navbar_b-NavLink_title(style='') &Ocy;&rcy;&gcy;&acy;&ncy;&acy;&jcy;&zcy;&iecy;&rcy;&ycy; &dcy;&lcy;&yacy; &khcy;&rcy;&acy;&ncy;&iecy;&ncy;&icy;&yacy; &icy;&gcy;&rcy;&ucy;&shcy;&iecy;&kcy;
                   li.s-Navbar_b-NavItem.__hasChildren
-                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/dekor')
+                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                       .s-Navbar_b-NavLink_content
                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/1e/1e58/1e584a7a-efde-460b-8a26-cfd1922cacf6.png");')
                         span.s-Navbar_b-NavLink_title(style='') &Dcy;&iecy;&kcy;&ocy;&rcy; &icy; &zcy;&iecy;&rcy;&kcy;&acy;&lcy;&acy;
-                    .s-Navbar_b-Level
+                    .s-Navbar_b-Level.lv-1
                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                       .s-Navbar_b-LevelSection
@@ -2548,11 +2544,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon.__allProducts
                                 span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/dekor/zerkala')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/81/811c/811c3b29-f601-42fb-aff0-82440da50a30.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Zcy;&iecy;&rcy;&kcy;&acy;&lcy;&acy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2583,11 +2579,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/1e/1e6f/1e6f3c35-070a-4cbe-a472-7223f0622df0.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Kcy;&rcy;&ucy;&gcy;&lcy;&ycy;&iecy; &zcy;&iecy;&rcy;&kcy;&acy;&lcy;&acy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/dekor/zerkala/nastennye-zerkala')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/76/7685/7685f556-c932-4551-add5-c3dced037ac8.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Ncy;&acy;&scy;&tcy;&iecy;&ncy;&ncy;&ycy;&iecy; &zcy;&iecy;&rcy;&kcy;&acy;&lcy;&acy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -2648,11 +2644,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/ab/ab2c/ab2cd83a-4340-4691-acde-2db59ddf50c9.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Zcy;&iecy;&rcy;&kcy;&acy;&lcy;&acy; &ncy;&acy; &rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&iecy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/dekor/chasy')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/1e/1ede/1edeaa5e-b1a7-4e50-a414-5a2510f3b2f3.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &CHcy;&acy;&scy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2678,11 +2674,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/fe/fe54/fe5422c0-df72-409a-9a03-3ad00bf79aa6.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Fcy;&icy;&gcy;&ucy;&rcy;&ycy; &icy; &scy;&tcy;&acy;&tcy;&ucy;&ecy;&tcy;&kcy;&icy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/dekor/svechi-i-podsvechniki')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/72/729e/729e0e67-bcab-43b1-8f60-85bdd0fcdad1.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Scy;&vcy;&iecy;&chcy;&icy; &icy; &pcy;&ocy;&dcy;&scy;&vcy;&iecy;&chcy;&ncy;&icy;&kcy;&icy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2703,11 +2699,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/2a/2a80/2a80dc9d-2053-4e1b-a469-a9d8c931c0be.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Pcy;&ocy;&dcy;&scy;&vcy;&iecy;&chcy;&ncy;&icy;&kcy;&icy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/dekor/vazy-i-tsvety')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/60/60fa/60fae889-8ce9-4eb6-8b25-6275ff3c8990.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Vcy;&acy;&zcy;&ycy; &icy; &kcy;&acy;&shcy;&pcy;&ocy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2753,11 +2749,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/12/12de/12de01a1-5881-4eaf-86c7-eb80903b8f86.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Dcy;&iecy;&kcy;&ocy;&rcy;&acy;&tcy;&icy;&vcy;&ncy;&ycy;&iecy; &pcy;&ocy;&dcy;&ucy;&shcy;&kcy;&icy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/dekor/aksessuary')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/03/0322/032245d5-e713-4753-849f-7c8b5fa177f6.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Acy;&kcy;&scy;&iecy;&scy;&scy;&ucy;&acy;&rcy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2813,11 +2809,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/84/8453/84533b02-e7d4-4066-8eb5-d6fbc9c763c3.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &SHcy;&icy;&rcy;&mcy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/dekor/hranenie')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/96/96ff/96ff2367-be32-44a0-b1f6-369c3dda1cfc.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Pcy;&rcy;&iecy;&dcy;&mcy;&iecy;&tcy;&ycy; &dcy;&lcy;&yacy; &khcy;&rcy;&acy;&ncy;&iecy;&ncy;&icy;&yacy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2843,10 +2839,10 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/16/1633/1633f0e2-0708-4f9d-b963-364e5c4f98dc.png");')
                                         span.s-Navbar_b-NavLink_title(style='') &Dcy;&iecy;&kcy;&ocy;&rcy;&acy;&tcy;&icy;&vcy;&ncy;&ycy;&iecy; &kcy;&ocy;&rcy;&ocy;&bcy;&kcy;&icy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink(href='https://www.inmyroom.ru/products/dekor/igrovye-domiki-v-detskuyu')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink
                               .s-Navbar_b-NavLink_content
                                 span.s-Navbar_b-NavLink_title(style='') &Icy;&gcy;&rcy;&ocy;&vcy;&ycy;&iecy; &dcy;&ocy;&mcy;&icy;&kcy;&icy; &vcy; &dcy;&iecy;&tcy;&scy;&kcy;&ucy;&yucy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2877,11 +2873,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/2b/2b97/2b97ce8e-f88b-4b44-83b1-149213f7f26a.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &pcy;&rcy;&iecy;&dcy;&mcy;&iecy;&tcy;&ocy;&vcy; &dcy;&iecy;&kcy;&ocy;&rcy;&acy;
                   li.s-Navbar_b-NavItem.__hasChildren
-                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/tekstil')
+                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                       .s-Navbar_b-NavLink_content
                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/fd/fd1e/fd1e818e-9d35-461c-8de9-9b8948dcdfc1.png");')
                         span.s-Navbar_b-NavLink_title(style='') &Tcy;&iecy;&kcy;&scy;&tcy;&icy;&lcy;&softcy;
-                    .s-Navbar_b-Level
+                    .s-Navbar_b-Level.lv-1
                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                       .s-Navbar_b-LevelSection
@@ -2902,11 +2898,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/a1/a112/a112747a-6889-43a2-ad07-67bc8fa433a3.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Ocy;&dcy;&iecy;&yacy;&lcy;&acy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/tekstil/kovry')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/25/250d/250d661e-e6dd-4d7b-9425-edbd1e13d5ec.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Kcy;&ocy;&vcy;&rcy;&ycy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -2917,11 +2913,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon.__allProducts
                                         span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/tekstil/kovry/kovry')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/40/4019/4019ed11-d2c4-46ac-b77f-3acac423a8db.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Kcy;&ocy;&vcy;&rcy;&ycy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -2975,11 +2971,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/37/3762/37622344-f30e-4a40-bdc2-82b2774bdf13.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Kcy;&ocy;&vcy;&rcy;&ycy; &dcy;&lcy;&yacy; &dcy;&iecy;&tcy;&scy;&kcy;&ocy;&jcy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/tekstil/postelnoe-belie')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/17/17b4/17b43385-066f-4b9c-82a9-224b4167fe8f.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Pcy;&ocy;&scy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&iecy; &bcy;&iecy;&lcy;&softcy;&iecy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -3015,11 +3011,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/7b/7b2d/7b2d31e0-a761-4fc6-bcc3-dd0dde8eec17.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Ncy;&acy;&vcy;&ocy;&lcy;&ocy;&chcy;&kcy;&icy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/tekstil/pledy-i-pokryvala')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/fa/fa92/fa92548a-2216-4c53-b0a5-f76cdc739e79.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Pcy;&lcy;&iecy;&dcy;&ycy; &icy; &pcy;&ocy;&kcy;&rcy;&ycy;&vcy;&acy;&lcy;&acy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -3045,11 +3041,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/c4/c424/c4246710-b64e-4387-b60f-ced6bbb5fc8c.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Dcy;&iecy;&kcy;&ocy;&rcy;&acy;&tcy;&icy;&vcy;&ncy;&ycy;&iecy; &pcy;&ocy;&dcy;&ucy;&shcy;&kcy;&icy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/tekstil/tekstil-dlya-kuhni')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/39/3907/39072b99-9c8f-41a4-99ac-7c3ccea0c0f5.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Tcy;&iecy;&kcy;&scy;&tcy;&icy;&lcy;&softcy; &dcy;&lcy;&yacy; &kcy;&ucy;&khcy;&ncy;&icy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -3084,11 +3080,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/a9/a903/a903f24a-0c22-4fc0-b5d5-8cd4ab237a99.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Scy;&acy;&lcy;&fcy;&iecy;&tcy;&kcy;&icy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/tekstil/polotentsa')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/b9/b928/b928020c-30fa-4dd8-adfe-186c42402a60.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Pcy;&ocy;&lcy;&ocy;&tcy;&iecy;&ncy;&tscy;&acy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -3122,11 +3118,11 @@ nav#navbarNav.collapse
                               .s-Navbar_b-NavLink_content
                                 span.s-Navbar_b-NavLink_title(style='') &Pcy;&ocy;&dcy;&ucy;&shcy;&kcy;&icy; &dcy;&lcy;&yacy; &scy;&ncy;&acy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/tekstil/tekstil-dlya-detskoj')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/69/6903/6903f065-b5e5-484a-a266-c7adc20fd7e7.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Tcy;&iecy;&kcy;&scy;&tcy;&icy;&lcy;&softcy; &dcy;&lcy;&yacy; &dcy;&iecy;&tcy;&scy;&kcy;&ocy;&jcy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -3157,11 +3153,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/5b/5be6/5be6cd0f-687c-4737-aa45-27a439a922a1.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &tcy;&iecy;&kcy;&scy;&tcy;&icy;&lcy;&yacy;
                   li.s-Navbar_b-NavItem.__hasChildren
-                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/posuda')
+                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                       .s-Navbar_b-NavLink_content
                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/4b/4b37/4b37c1af-1394-4ea6-9b11-e7c96c770b5e.png");')
                         span.s-Navbar_b-NavLink_title(style='') &Pcy;&ocy;&scy;&ucy;&dcy;&acy;
-                    .s-Navbar_b-Level
+                    .s-Navbar_b-Level.lv-1
                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                       .s-Navbar_b-LevelSection
@@ -3217,11 +3213,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/af/af39/af39b1de-11d2-4fdc-bc71-8ed16da84b01.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &pcy;&ocy;&scy;&ucy;&dcy;&ycy;
                   li.s-Navbar_b-NavItem.__hasChildren
-                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/podarki')
+                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                       .s-Navbar_b-NavLink_content
                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/6e/6e6d/6e6d6fb0-704d-45a9-90ac-118a1eb5a792.png");')
                         span.s-Navbar_b-NavLink_title(style='') &Pcy;&ocy;&dcy;&acy;&rcy;&kcy;&icy;
-                    .s-Navbar_b-Level
+                    .s-Navbar_b-Level.lv-1
                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                       .s-Navbar_b-LevelSection
@@ -3232,11 +3228,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon.__allProducts
                                 span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/podarki/zerkala')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/a1/a13f/a13fcc37-8fe7-4965-94ad-f0ce94b66cb6.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Zcy;&iecy;&rcy;&kcy;&acy;&lcy;&acy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -3247,11 +3243,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon.__allProducts
                                         span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/podarki/zerkala/nastennye-zerkala')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/2c/2cf3/2cf3c597-adc3-4759-ae07-4556adb6244e.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Ncy;&acy;&scy;&tcy;&iecy;&ncy;&ncy;&ycy;&iecy; &zcy;&iecy;&rcy;&kcy;&acy;&lcy;&acy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -3352,11 +3348,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/a5/a59d/a59d451c-a423-418f-a0de-25c7226f0672.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &CHcy;&acy;&scy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/podarki/posuda')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/30/30d3/30d31d41-7676-433f-a4d9-b0b0b099cc48.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Pcy;&ocy;&dcy;&acy;&rcy;&ocy;&chcy;&ncy;&acy;&yacy; &pcy;&ocy;&scy;&ucy;&dcy;&acy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -3405,11 +3401,11 @@ nav#navbarNav.collapse
                                       .s-Navbar_b-NavLink_content
                                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &pcy;&ocy;&scy;&ucy;&dcy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/podarki/tekstil')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/0e/0eb3/0eb3d4b5-ba11-40cd-adc3-4fb5c4b2ff6c.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Tcy;&iecy;&kcy;&scy;&tcy;&icy;&lcy;&softcy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -3435,11 +3431,11 @@ nav#navbarNav.collapse
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/27/2774/2774122d-31fc-435a-b9ae-57c4777ebc90.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Dcy;&iecy;&kcy;&ocy;&rcy;&acy;&tcy;&icy;&vcy;&ncy;&ycy;&iecy; &pcy;&ocy;&dcy;&ucy;&shcy;&kcy;&icy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/podarki/tekstil/postelnoe-belie')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/d0/d097/d097c83b-1ab6-4979-a0f3-db8ec83923fe.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Pcy;&ocy;&scy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&iecy; &bcy;&iecy;&lcy;&softcy;&iecy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -3475,11 +3471,11 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/59/5951/595110fa-568f-46f3-b7f2-f1853d33a786.jpg");')
                                                 span.s-Navbar_b-NavLink_title(style='') &Pcy;&rcy;&ocy;&scy;&tcy;&ycy;&ncy;&icy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/podarki/tekstil/tekstil-dlya-detskoj')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                                       .s-Navbar_b-NavLink_content
                                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/ba/bae0/bae0fee6-3077-48fa-a3c3-cf724e4bdc42.jpg");')
                                         span.s-Navbar_b-NavLink_title(style='') &Tcy;&iecy;&kcy;&scy;&tcy;&icy;&lcy;&softcy; &dcy;&lcy;&yacy; &dcy;&iecy;&tcy;&scy;&kcy;&ocy;&jcy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -3508,11 +3504,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/d1/d1da/d1dae27b-f146-45a1-8ef4-797a9ecfabfb.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &pcy;&ocy;&dcy;&acy;&rcy;&kcy;&ocy;&vcy;
                   li.s-Navbar_b-NavItem.__hasChildren
-                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/dlya-dachi-i-sada')
+                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                       .s-Navbar_b-NavLink_content
                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/81/8151/8151a04f-8655-4153-9b7f-feb07cb4b154.png");')
                         span.s-Navbar_b-NavLink_title(style='') &Dcy;&acy;&chcy;&acy; &icy; &scy;&acy;&dcy;
-                    .s-Navbar_b-Level
+                    .s-Navbar_b-Level.lv-1
                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                       .s-Navbar_b-LevelSection
@@ -3523,11 +3519,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon.__allProducts
                                 span.s-Navbar_b-NavLink_title(style='') &Vcy;&scy;&iecy; &tcy;&ocy;&vcy;&acy;&rcy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/dlya-dachi-i-sada/sadovaya-mebel')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/7a/7ae0/7ae0082b-6235-49b0-95f3-a923e6d57c4a.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Scy;&acy;&dcy;&ocy;&vcy;&acy;&yacy; &mcy;&iecy;&bcy;&iecy;&lcy;&softcy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -3613,11 +3609,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/fe/febf/febf7ed8-9d07-4856-b6a2-ecb74856d53b.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Bcy;&iecy;&scy;&kcy;&acy;&rcy;&kcy;&acy;&scy;&ncy;&acy;&yacy; &mcy;&iecy;&bcy;&iecy;&lcy;&softcy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/dlya-dachi-i-sada/ulichnyy-svet')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/6c/6c22/6c227e62-7488-4908-80bf-d59b874c1a97.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Ucy;&lcy;&icy;&chcy;&ncy;&ycy;&jcy; &scy;&vcy;&iecy;&tcy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -3658,11 +3654,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/60/60ca/60ca8487-f255-4f0f-80ef-3d78115b163a.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Gcy;&rcy;&icy;&lcy;&icy; &icy; &acy;&kcy;&scy;&iecy;&scy;&scy;&ucy;&acy;&rcy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/dlya-dachi-i-sada/aksessuary-dlya-sada')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/3c/3cbf/3cbf2bc4-063c-4c0a-a014-3d1d5a30ef86.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Acy;&kcy;&scy;&iecy;&scy;&scy;&ucy;&acy;&rcy;&ycy; &dcy;&lcy;&yacy; &dcy;&acy;&chcy;&icy; &icy; &scy;&acy;&dcy;&acy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -3693,11 +3689,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/20/201e/201e1fa8-210c-4aff-b253-dc8f66d44def.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Scy;&acy;&dcy;&ocy;&vcy;&ycy;&iecy; &fcy;&icy;&gcy;&ucy;&rcy;&ycy; &icy; &fcy;&ocy;&ncy;&tcy;&acy;&ncy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/dlya-dachi-i-sada/ulichnye-obogrevateli')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/f8/f825/f82519e0-77fb-432b-a153-4e886d6fbc9d.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Ucy;&lcy;&icy;&chcy;&ncy;&ycy;&iecy; &ocy;&bcy;&ocy;&gcy;&rcy;&iecy;&vcy;&acy;&tcy;&iecy;&lcy;&icy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -3723,11 +3719,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/7d/7d47/7d47db7b-ca01-4060-b0c0-427f67c226d0.png");')
                                 span.s-Navbar_b-NavLink_title(style='') &Rcy;&acy;&scy;&pcy;&rcy;&ocy;&dcy;&acy;&zhcy;&acy; &tcy;&ocy;&vcy;&acy;&rcy;&ocy;&vcy; &dcy;&lcy;&yacy; &dcy;&acy;&chcy;&icy; &icy; &scy;&acy;&dcy;&acy;
                   li.s-Navbar_b-NavItem.__hasChildren
-                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/remont')
+                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                       .s-Navbar_b-NavLink_content
                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/47/477c/477cd343-830f-425f-927d-bc8a8dca15a7.jpg");')
                         span.s-Navbar_b-NavLink_title(style='') &Rcy;&iecy;&mcy;&ocy;&ncy;&tcy;
-                    .s-Navbar_b-Level
+                    .s-Navbar_b-Level.lv-1
                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                       .s-Navbar_b-LevelSection
@@ -3743,11 +3739,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/56/560b/560b271c-07b6-4917-932b-845fe505d9f7.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Ocy;&bcy;&ocy;&icy;
                   li.s-Navbar_b-NavItem.__hasChildren
-                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/santekhnika')
+                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                       .s-Navbar_b-NavLink_content
                         .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/2b/2b8a/2b8a7dde-b592-4772-923a-47adc6a211a0.png");')
                         span.s-Navbar_b-NavLink_title(style='') &Scy;&acy;&ncy;&tcy;&iecy;&khcy;&ncy;&icy;&kcy;&acy;
-                    .s-Navbar_b-Level
+                    .s-Navbar_b-Level.lv-1
                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                       .s-Navbar_b-LevelSection
@@ -3813,11 +3809,11 @@ nav#navbarNav.collapse
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/b4/b444/b44482ba-ebd9-4963-b4e5-f7bea7c625c0.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Dcy;&ucy;&shcy;&iecy;&vcy;&ycy;&iecy; &kcy;&acy;&bcy;&icy;&ncy;&ycy;
                           li.s-Navbar_b-NavItem.__hasChildren
-                            a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon(href='https://www.inmyroom.ru/products/santekhnika/aksessuary-dlya-vannoj')
+                            .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink.__withIcon
                               .s-Navbar_b-NavLink_content
                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/b2/b2a1/b2a1ee3d-515e-4bf4-a5f9-a1654a085a8e.jpg");')
                                 span.s-Navbar_b-NavLink_title(style='') &Acy;&kcy;&scy;&iecy;&scy;&scy;&ucy;&acy;&rcy;&ycy; &dcy;&lcy;&yacy; &vcy;&acy;&ncy;&ncy;&ocy;&jcy;
-                            .s-Navbar_b-Level
+                            .s-Navbar_b-Level.lv-2
                               .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                 .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                               .s-Navbar_b-LevelSection
@@ -3862,10 +3858,10 @@ nav#navbarNav.collapse
                                       .s-Navbar_b-NavLink_content
                                         span.s-Navbar_b-NavLink_title(style='') &Pcy;&rcy;&ocy;&chcy;&iecy;&iecy;
                                   li.s-Navbar_b-NavItem.__hasChildren
-                                    a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink(href='https://www.inmyroom.ru/products/santekhnika/aksessuary-dlya-vannoj/aksessuary-dlya-vannoj-i-tualeta')
+                                    .s-Navbar_b-NavItem_link.s-Navbar_b-NavLink
                                       .s-Navbar_b-NavLink_content
                                         span.s-Navbar_b-NavLink_title(style='') &Acy;&kcy;&scy;&iecy;&scy;&scy;&ucy;&acy;&rcy;&ycy; &dcy;&lcy;&yacy; &vcy;&acy;&ncy;&ncy;&ocy;&jcy; &icy; &tcy;&ucy;&acy;&lcy;&iecy;&tcy;&acy;
-                                    .s-Navbar_b-Level
+                                    .s-Navbar_b-Level.lv-3
                                       .s-Navbar_b-Level_controls.s-Navbar_b-LevelControls
                                         .s-Navbar_b-LevelControls_button.__back &Ncy;&acy;&zcy;&acy;&dcy;
                                       .s-Navbar_b-LevelSection
@@ -3881,4 +3877,22 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/42/4246/424636ff-e165-426d-a0fd-bc47f6384ff1.jpg");')
                                                 span.s-Navbar_b-NavLink_title(style='') &SHcy;&tcy;&ocy;&rcy;&kcy;&icy; &dcy;&lcy;&yacy; &dcy;&ucy;&shcy;&acy;
 
-
+.s-Tapbar(data-controller='Tapbar'  data-controller-inited='true')
+  .s-Tapbar_b-Actions
+    a.s-Tapbar_b-Action.__home.__isActive(href='https://www.inmyroom.ru/')
+      svg.s-Tapbar_b-Action_icon(fill='#000000' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 48 48' width='24px' height='24px')
+        path(d='M 23.951172 4 A 1.50015 1.50015 0 0 0 23.072266 4.3222656 L 8.859375 15.519531 C 7.0554772 16.941163 6 19.113506 6 21.410156 L 6 40.5 C 6 41.863594 7.1364058 43 8.5 43 L 18.5 43 C 19.863594 43 21 41.863594 21 40.5 L 21 30.5 C 21 30.204955 21.204955 30 21.5 30 L 26.5 30 C 26.795045 30 27 30.204955 27 30.5 L 27 40.5 C 27 41.863594 28.136406 43 29.5 43 L 39.5 43 C 40.863594 43 42 41.863594 42 40.5 L 42 21.410156 C 42 19.113506 40.944523 16.941163 39.140625 15.519531 L 24.927734 4.3222656 A 1.50015 1.50015 0 0 0 23.951172 4 z M 24 7.4101562 L 37.285156 17.876953 C 38.369258 18.731322 39 20.030807 39 21.410156 L 39 40 L 30 40 L 30 30.5 C 30 28.585045 28.414955 27 26.5 27 L 21.5 27 C 19.585045 27 18 28.585045 18 30.5 L 18 40 L 9 40 L 9 21.410156 C 9 20.030807 9.6307412 18.731322 10.714844 17.876953 L 24 7.4101562 z')
+      .s-Tapbar_b-Action_title &Gcy;&lcy;&acy;&vcy;&ncy;&acy;&yacy;
+    a.s-Tapbar_b-Action.__menu(data-controller='MenuOpener' data-props='{}' href='#' data-controller-inited='true')
+      svg.s-Tapbar_b-Action_icon#Capa_1(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 56.966 56.966' style='enable-background:new 0 0 56.966 56.966;' xml:space='preserve')
+        path(d='M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23\
+        s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92\
+        c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17\
+        s-17-7.626-17-17S14.61,6,23.984,6z')
+      .s-Tapbar_b-Action_title &Mcy;&iecy;&ncy;&yucy;
+    a.s-Tapbar_b-Action.__cart(data-controller='CartItemsCounter' data-props='{}' href='https://www.inmyroom.ru/cart' data-controller-inited='true' data-items-count='0')
+      .s-Tapbar_b-Action_icon
+      .s-Tapbar_b-Action_title &Kcy;&ocy;&rcy;&zcy;&icy;&ncy;&acy;
+    a.s-Tapbar_b-Action.__login(data-gtm-header-register='' data-needs-auth='true' href='#')
+      .s-Tapbar_b-Action_icon
+      .s-Tapbar_b-Action_title &Vcy;&ocy;&jcy;&tcy;&icy;

@@ -38,10 +38,10 @@
   }
 }
 
-#sign-in {
-  font-size: 18px;
-  line-height: 40px;
-  height: fit-content;
+.line-vertival {
+  @include box(2px,32px);
+  background-color: $black;
+  margin: 0 25px;
 }
 
 #more {
@@ -143,10 +143,7 @@
     bottom: 0;
     left: 0;
     display: block;
-    // background-image: url(svg-icons/shared/play-button.669f3216.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 50px;
+    background: url("../img/play-button.svg") no-repeat center / 50px;
   }
   &.__mode_tv .s-PostPreview_b-Pic {
     border-radius: 12px;
@@ -187,14 +184,13 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    color: #fff;
+    color: $white;
     font-weight: 600;
     font-size: 16px;
     line-height: 1.2;
   }
   &_b-Counters {
-    height: 17px;
-    margin-top: 6px;
+    margin-top: 10px;
   }
   &_b-Tag {
     display: block;
@@ -295,28 +291,16 @@
     content: '';
   }
   &__views:before {
-    width: 12px;
-    height: 12px;
-    // background-image: url(svg-icons/shared/views__gray.470742f1.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    @include box(12px);
+    background: url("../img/eye.svg") no-repeat center / contain;
   }
   &__likes:before {
-    width: 12px;
-    height: 12px;
-    // background-image: url(svg-icons/shared/likes__gray.151ef6cb.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    @include box(12px);
+    background: url("../img/heart.svg") no-repeat center / contain;
   }
   &__comments:before {
-    width: 12px;
-    height: 12px;
-    // background-image: url(svg-icons/shared/comments__gray.3b390c2c.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    @include box(12px);
+    background: url("../img/chat.svg") no-repeat center / contain;
   }
 }
 .b-Counter+.b-Counter {
@@ -379,7 +363,7 @@
 
 .s-PostPreview.__mode_fullNew {
   .s-PostPreview_b-Content {
-    padding: 15px 30px 30px;
+    padding: 20px 30px 25px;
   }
   .s-PostPreview_b-Tag {
     line-height: 1.6;
@@ -479,5 +463,14 @@
     font-size: 14px;
   }
 }
+
+.fs-10 {
+  font-size: 10px;
+  line-height: 12px;
+}
+.c-gray {
+  color: $gray ;
+}
+
 @import "modules/modules";
 @import "utils/media";
