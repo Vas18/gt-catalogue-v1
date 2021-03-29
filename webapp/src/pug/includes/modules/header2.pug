@@ -2,24 +2,29 @@ header.header
     .header-top
         .container
             .d-flex.align-items-center.justify-content-between
-                button.s-Topbar_b-Location(data-open-city-select='' type='button') Москва
+                button.s-Topbar_b-Location(type='button')
+                    img.mr-1(src="assets/img/placeholder-filled-point.svg", alt="point" width="12px" height="15px")
+                    | Москва
                 ul.navbar-t
-                    each val in ['Доставка','Оплата','Гарантия','Контакты']
-                        li.navbar-t_item 
+                    each val, index in ['Доставка','Оплата','Гарантия','Контакты']
+                        li.navbar-t_item(class=(index==1 || index==2)? 'd-sm-block d-none': '') 
                             a.navbar-t_link(href="#")=val
     .container 
         nav.navbar.navbar-expand-lg.d-flex.justify-content-between.align-items-center 
             .d-flex.align-items-center 
                 a.navbar-brand(href='#') ЛОГОТИП
-                .line-vertival
-                .nav-item.active
-                    a.nav-link(href='#') ЗКАЗАТЬ ТОВАР
+                .d-lg-flex.d-none.align-items-lg-center 
+                    .line-vertival
+                    .nav-item.active
+                        a.nav-link(href='#') ЗКАЗАТЬ ТОВАР
             .d-flex.align-items-center
 
                 ul.navbar-nav.mr-xl-4.pr-xl-3.d-lg-flex.d-none 
                     each val, index in ['ОНЛАЙН ШКОЛА','РЕЦЕПТЫ']
                         li.nav-item
                             a.nav-link(href='#')=val
+                        li.nav-item.d-lg-none
+                            a.nav-link(href='#') ЗКАЗАТЬ ТОВАР
                 a#sign-in.btn.ml-5(href="#") ВОЙТИ
                 button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation') МЕНЮ
                     img.navbar-toggler-icon(src="assets/img/burger.png" alt="burger")
@@ -3888,17 +3893,47 @@ nav#navbarNav.collapse
                                                                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/42/4246/424636ff-e165-426d-a0fd-bc47f6384ff1.jpg");')
                                                                                                 span.s-Navbar_b-NavLink_title(style='') &SHcy;&tcy;&ocy;&rcy;&kcy;&icy; &dcy;&lcy;&yacy; &dcy;&ucy;&shcy;&acy;
 
-.s-Tapbar(data-controller='Tapbar' data-controller-inited='true')
+.s-Tapbar
   .s-Tapbar_b-Actions
-    a.s-Tapbar_b-Action.__home.__isActive(href='https://www.inmyroom.ru/')
-      .s-Tapbar_b-Action_icon
-      .s-Tapbar_b-Action_title &Gcy;&lcy;&acy;&vcy;&ncy;&acy;&yacy;
+    a.s-Tapbar_b-Action.__home.isActive(href='https://www.inmyroom.ru/')
+      svg.s-Tapbar_b-Action_icon(fill='#000000' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 48 48' width='24px' height='24px')
+        path(d='M 23.951172 4 A 1.50015 1.50015 0 0 0 23.072266 4.3222656 L 8.859375 15.519531 C 7.0554772 16.941163 6 19.113506 6 21.410156 L 6 40.5 C 6 41.863594 7.1364058 43 8.5 43 L 18.5 43 C 19.863594 43 21 41.863594 21 40.5 L 21 30.5 C 21 30.204955 21.204955 30 21.5 30 L 26.5 30 C 26.795045 30 27 30.204955 27 30.5 L 27 40.5 C 27 41.863594 28.136406 43 29.5 43 L 39.5 43 C 40.863594 43 42 41.863594 42 40.5 L 42 21.410156 C 42 19.113506 40.944523 16.941163 39.140625 15.519531 L 24.927734 4.3222656 A 1.50015 1.50015 0 0 0 23.951172 4 z M 24 7.4101562 L 37.285156 17.876953 C 38.369258 18.731322 39 20.030807 39 21.410156 L 39 40 L 30 40 L 30 30.5 C 30 28.585045 28.414955 27 26.5 27 L 21.5 27 C 19.585045 27 18 28.585045 18 30.5 L 18 40 L 9 40 L 9 21.410156 C 9 20.030807 9.6307412 18.731322 10.714844 17.876953 L 24 7.4101562 z')
+      
+      .s-Tapbar_b-Action_title Главная
     a.s-Tapbar_b-Action.__menu(data-controller='MenuOpener' data-props='{}' href='#' data-controller-inited='true')
-      .s-Tapbar_b-Action_icon
-      .s-Tapbar_b-Action_title &Mcy;&iecy;&ncy;&yucy;
+      svg.s-Tapbar_b-Action_icon(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 56.966 56.966' style='enable-background:new 0 0 56.966 56.966;' xml:space='preserve')
+        path(d='M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23\
+        s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92\
+        c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17\
+        s-17-7.626-17-17S14.61,6,23.984,6z')
+      .s-Tapbar_b-Action_title Меню
     a.s-Tapbar_b-Action.__cart(data-controller='CartItemsCounter' data-props='{}' href='https://www.inmyroom.ru/cart' data-controller-inited='true' data-items-count='0')
-      .s-Tapbar_b-Action_icon
-      .s-Tapbar_b-Action_title &Kcy;&ocy;&rcy;&zcy;&icy;&ncy;&acy;
+      
+      svg.s-Tapbar_b-Action_icon(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 511.997 511.997' style='enable-background:new 0 0 511.997 511.997;' xml:space='preserve')
+        g
+            g
+            path(d='M405.387,362.612c-35.202,0-63.84,28.639-63.84,63.84s28.639,63.84,63.84,63.84s63.84-28.639,63.84-63.84\
+            S440.588,362.612,405.387,362.612z M405.387,451.988c-14.083,0-25.536-11.453-25.536-25.536s11.453-25.536,25.536-25.536\
+            c14.083,0,25.536,11.453,25.536,25.536S419.47,451.988,405.387,451.988z')
+        g
+            g
+            path(d='M507.927,115.875c-3.626-4.641-9.187-7.348-15.079-7.348H118.22l-17.237-72.12c-2.062-8.618-9.768-14.702-18.629-14.702\
+            H19.152C8.574,21.704,0,30.278,0,40.856s8.574,19.152,19.152,19.152h48.085l62.244,260.443\
+            c2.062,8.625,9.768,14.702,18.629,14.702h298.135c8.804,0,16.477-6.001,18.59-14.543l46.604-188.329\
+            C512.849,126.562,511.553,120.516,507.927,115.875z M431.261,296.85H163.227l-35.853-150.019h341.003L431.261,296.85z')
+        g
+            g
+            path(d='M173.646,362.612c-35.202,0-63.84,28.639-63.84,63.84s28.639,63.84,63.84,63.84s63.84-28.639,63.84-63.84\
+            S208.847,362.612,173.646,362.612z M173.646,451.988c-14.083,0-25.536-11.453-25.536-25.536s11.453-25.536,25.536-25.536\
+            s25.536,11.453,25.536,25.536S187.729,451.988,173.646,451.988z')
+      .s-Tapbar_b-Action_title Корзина
     a.s-Tapbar_b-Action.__login(data-gtm-header-register='' data-needs-auth='true' href='#')
-      .s-Tapbar_b-Action_icon
-      .s-Tapbar_b-Action_title &Vcy;&ocy;&jcy;&tcy;&icy;
+      svg.s-Tapbar_b-Action_icon.__enter(enable-background='new 0 0 24 24' height='512' viewbox='0 0 24 24' width='512' xmlns='http://www.w3.org/2000/svg')
+        g
+            path(d='m15.5 12.5h-15c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h15c.276 0 .5.224.5.5s-.224.5-.5.5z')
+        g
+            path(d='m11.5 16.5c-.128 0-.256-.049-.354-.146-.195-.195-.195-.512 0-.707l3.647-3.647-3.646-3.646c-.195-.195-.195-.512 0-.707s.512-.195.707 0l4 4c.195.195.195.512 0 .707l-4 4c-.098.097-.226.146-.354.146z')
+        g
+            path(d='m12 23c-4.655 0-8.823-2.947-10.372-7.333-.092-.261.045-.546.305-.638.261-.09.546.045.638.305 1.408 3.987 5.197 6.666 9.429 6.666 5.514 0 10-4.486 10-10s-4.486-10-10-10c-4.232 0-8.021 2.679-9.428 6.667-.092.26-.378.395-.638.305-.26-.092-.397-.377-.305-.638 1.548-4.387 5.716-7.334 10.371-7.334 6.065 0 11 4.935 11 11s-4.935 11-11 11z')
+
+      .s-Tapbar_b-Action_title Войти

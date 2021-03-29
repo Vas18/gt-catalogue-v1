@@ -1,0 +1,29 @@
+.b-Breadcrumbs {
+    font-weight: 500;
+    font-size: 12px;
+    color: #999;
+    margin-top: 7px;
+    &__icon {
+        fill: #999;
+        @include box(16px)
+    }
+    &_item {
+        display: inline-block;
+        vertical-align: middle;
+        &:first-child {
+            a:before {
+                content: none;
+            }
+        }
+        a {
+            color: #999;
+            &:before {
+                content: '/';
+                margin: 0 10px;
+                color: #999;
+            }
+        }
+       
+        
+    }
+}

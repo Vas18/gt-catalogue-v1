@@ -4,6 +4,18 @@
 @import "utils/fonts";
 @import "utils/base";
 
+.list {
+  &-item {
+    font-size: 16px;
+    line-height: 21px;
+    color: #999999;
+  }
+}
+.title {
+  font-weight: 900;
+  font-size: 45px;
+  line-height: 61px;
+}
 .title2 {
   font-weight: 900;
   font-size: 35px;
@@ -34,7 +46,45 @@
     color: $white;
     background: $pink;
     border-radius: 7px;
-    padding: 0 10px
+    padding: 0 10px;
+    white-space: nowrap;
+    &.__small {
+      font-size: 14px;
+      line-height: 33px;
+      position: relative;
+      z-index: 2;
+      &:before {
+        content: '';
+        position: absolute;
+        right: 100%;
+        top: 0;
+        height: 100%;
+        width: 54px;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #FFFFFF 51.04%);
+        pointer-events: none;
+        z-index: 1;
+      }
+    }
+  }
+  &-category {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    padding: 7px 15px;
+    color: #333333;
+    background: #FAF8F4;
+    box-shadow: 0px 1px 3px #CBCBCB;
+    border-radius: 5px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  &-filter {
+    line-height: 32px;
+    font-size: 11px;
+    padding: 0 23px;
+    
   }
 }
 
@@ -89,24 +139,41 @@
     background-color: #faf8f4;
     img {
       transform: translateY(-10px);
+      
     }
   }
   &__text {
     font-weight: 900;
     font-size: 21px;
     line-height: 28px;
+    display: block;
   }
   &__img {
     @include box(170px,150px);
     margin: 0 auto;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform .15s ease-in-out,-webkit-transform .15s;
+  }
+  &.block-subcategory {
+    width: 248px;
+    flex-shrink: 0;
+    margin-right: 24px;
+    .block-category__img {
+      @include box(100%,60px);
+
+    }
   }
 }
 
 .scroll-x {
   overflow-x: auto; 
   width: 100%;
+  margin-left: -10px;
+  padding-left: 10px;
+  width: calc(100% + 10px);
+  &::-webkit-scrollbar {
+    display: none;
+  }
   .s-PostPreview {
     min-width: 285px;
   }
@@ -464,13 +531,6 @@
   }
 }
 
-.fs-10 {
-  font-size: 10px;
-  line-height: 12px;
-}
-.c-gray {
-  color: $gray ;
-}
 
 @import "modules/modules";
 @import "utils/media";

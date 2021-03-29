@@ -1,0 +1,73 @@
+
+.bg-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: absolute;
+    opacity: 0.1;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 0;
+    z-index: 5;
+    pointer-events: none;
+    border-radius: 15px;
+}
+
+.card {
+    border: none;
+    &-t {
+        position: relative;
+        &__img {
+            width: 100%;
+            height: 388px;
+            // background: #C4C4C4;
+            border-radius: 15px;
+            object-fit: contain;
+        }
+
+    }
+    &-b {
+        padding: 10px;
+        &__brand {
+            position: relative;
+            margin-right: 12px;
+            @include box(35px);
+            border-radius: 50%;
+            &-img {
+                object-fit: contain;
+                @include box(35px);
+                border-radius: 50%;
+                
+            }
+            &-name {
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+        &__pink {
+            font-weight: 600;
+            font-size: 21px;
+            line-height: 28px;
+            margin-bottom: 7px;
+            color: $pink ;
+        }
+        &__title {
+            font-weight: 600;
+            font-size: 25px;
+            line-height: 33px;
+            margin-bottom: 7px;
+            color: $black;
+        }
+        &__text {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 19px;
+            color: #999999;
+            margin-bottom: 12px;
+        }
+        &__status-text {
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+}

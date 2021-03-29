@@ -1,36 +1,142 @@
 extends ../layout/base
 
 block variables
-    //подключаем основу для страницы и выводим в нее данные
-    - var title='Webpack-template with Pug';
-    - var description='Description for webpack + Pug';
-    - var pageClass='index-page';
+  //подключаем основу для страницы и выводим в нее данные
+  - var title='Webpack-template with Pug';
+  - var description='Description for webpack + Pug';
+  - var pageClass='index-page';
 
 block content
-  
+
   include ../includes/modules/header2
-  .first
-    .container
-      .row 
-        .col-lg-7.col-6.px-lg-3.px-1
-          .block 
-            .d-lg-block.d-none
-              p.block-title.mb-1 Где заказать ?
-              p.fw-semi 
-                span Найдите товары по лучшей цене в своем городе. 
-                span.c-brown Вы найдете любой товар на свой вкус и под свой бюджет. 
-              a.btn.lh-55.mt-3(href="#") СМОТРЕТЬ ПРЕДЛОЖЕНИЯ В ВАШЕМ ГОРОДЕ
-            a.d-lg-none.text-center(href="#") 
-              img.mx-auto.mb-2(src="#", alt="icon")
-              span.fs-25.fw-black Заказать <br> товар
-        .col-lg-5.col-6.px-lg-3.px-1
-          .block
-            .d-lg-block.d-none
-              p.block-title.mb-1 Обучение онлайн
-              p.fw-semi.c-brown Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              a.btn.lh-55.mt-3(href="#") ПЕРЕЙТИ В ОНЛАЙН ШКОЛУ
-            a.d-lg-none.text-center(href="#") 
-              img.mx-auto.mb-2(src="#", alt="icon")
-              span.fs-25.fw-black Онлайн <br> ШКОЛА
-              
+
+  .container 
+    .pt-3.d-flex.justify-content-between 
+      .d-flex.scroll-x.mr-4 
+        -var n = 8
+        while n--
+          a.btn-category.mb-2(href="#") Категория 1
+      a.btn-pink.__small.mb-2.ml-xl-auto.d-flex.align-items-center(href="#") 
+        img.d-sm-none.mr-1(src="assets/img/loupe.svg", alt="loupe" width="12px" height="12px")
+        span.d-sm-inline.d-none Смотреть 
+        span все 
+        span.d-sm-inline.d-none категории
+    nav.b-Breadcrumbs.scroll-x 
+      ul
+        li.b-Breadcrumbs_item
+          a(href="#")
+            svg.b-Breadcrumbs__icon(fill='#000000' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 48 48' width='24px' height='24px')
+              path(d='M 23.951172 4 A 1.50015 1.50015 0 0 0 23.072266 4.3222656 L 8.859375 15.519531 C 7.0554772 16.941163 6 19.113506 6 21.410156 L 6 40.5 C 6 41.863594 7.1364058 43 8.5 43 L 18.5 43 C 19.863594 43 21 41.863594 21 40.5 L 21 30.5 C 21 30.204955 21.204955 30 21.5 30 L 26.5 30 C 26.795045 30 27 30.204955 27 30.5 L 27 40.5 C 27 41.863594 28.136406 43 29.5 43 L 39.5 43 C 40.863594 43 42 41.863594 42 40.5 L 42 21.410156 C 42 19.113506 40.944523 16.941163 39.140625 15.519531 L 24.927734 4.3222656 A 1.50015 1.50015 0 0 0 23.951172 4 z M 24 7.4101562 L 37.285156 17.876953 C 38.369258 18.731322 39 20.030807 39 21.410156 L 39 40 L 30 40 L 30 30.5 C 30 28.585045 28.414955 27 26.5 27 L 21.5 27 C 19.585045 27 18 28.585045 18 30.5 L 18 40 L 9 40 L 9 21.410156 C 9 20.030807 9.6307412 18.731322 10.714844 17.876953 L 24 7.4101562 z')
+
+        li.b-Breadcrumbs_item
+          a(href="#") Товары
+        li.b-Breadcrumbs_item
+          a(href="#") Мебель
+        li.b-Breadcrumbs_item
+          a(href="#") Кровати
+    .row.py-sm-5.py-4 
+      .col-12 
+        h1.title.mb-sm-3.mb-2 Каталог продукции
+      .col-lg-3.mb-3 
+        .d-lg-block.d-flex
+          p.fs-sm-20.fs-15.mr-4 
+            strong 808 
+            |товаров
+          p.fs-sm-20.fs-15
+            strong 120  
+            |брендов
+      .col-lg-9
+        ul.list 
+          each val in ['— Купить продукты в Москве в интернет-магазине .','— В каталоге 6649 товаров с описанием характеристик и информацией о продукте','— В наличии продукты по цене от 2 400 руб.']
+            li.list-item=val
+    .d-flex.scroll-x 
+      -var n = 3
+      while n--
+       
+        a.block-category.block-subcategory.mb-4(href='#')
+          img.block-category__img.mb-2(src='assets/img/img2.png' alt='img')
+          span.block-category__text.text-center ПодКатегория 1
+
+    p.fs-16.c-brown Очень часто ищут следующее:
+    .d-flex.scroll-x.pt-3
+      -var n = 3
+      while n--
+        a.btn-category.mb-2(href="#") Поисковый запрос 1
+
+    button.btn.btn-filter.ml-auto.my-3.d-sm-none.d-block(data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter") ФИЛЬТР
+    
+    .b-Filter#collapseFilter.py-sm-5.collapse 
+      .b-Filter_container.d-sm-flex
+        .d-sm-none
+          button.b-Filter_close(data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter")
+            img(src="assets/img/close.png", alt="close")
+          h2.title2.mb-4 Параметры
+        .s-ListFilter_b-Section
+          .s-ListFilter_b-Section_toggle
+            .d-flex
+              img.mr-2(src="assets/img/placeholder-filled-point.svg", alt="point" width="18px" height="20px")
+              div
+                ._title ВАШ ГОРОД
+                ._choice МОСКВА
+        .s-ListFilter_b-Section
+          .s-ListFilter_b-Section_toggle.collapsed(data-toggle="collapse" href="#collapseDiscipline" role="button" aria-expanded="false" aria-controls="collapseDiscipline")
+            ._title Порядок
+            ._choice Популярное
+            .d-sm-none
+              img.arrow-toggle(src="assets/img/arrow-right.svg", alt="arrow" width="14px" height="14px")
+          .s-ListFilter_b-Section_content.s-ListFilter_b-Field_content#collapseDiscipline.collapse
+            h4.s-ListFilter_b-Section_title(data-toggle="collapse" href="#collapseDiscipline" role="button" aria-expanded="false" aria-controls="collapseDiscipline") Порядок
+            label.d-flex.align-items-center
+              input.ui-Input_input(type="radio" name="radio")
+              span.ui-Input_ui-item
+              span.ui-Input_label Популярное
+                
+            label.d-flex.align-items-center
+              input.ui-Input_input(type="radio" name="radio")
+              span.ui-Input_ui-item
+              span.ui-Input_label Новинки
+            label.d-flex.align-items-center
+              input.ui-Input_input(type="radio" name="radio")
+              span.ui-Input_ui-item
+              span.ui-Input_label Сначала дешевые
+            label.d-flex.align-items-center
+              input.ui-Input_input(type="radio" name="radio")
+              span.ui-Input_ui-item
+              span.ui-Input_label Сначала дорогие
+            label.d-flex.align-items-center
+              input.ui-Input_input(type="radio" name="radio")
+              span.ui-Input_ui-item
+              span.ui-Input_label По размеру скидки
+            label.d-flex.align-items-center
+              input.ui-Input_input(type="radio" name="radio")
+              span.ui-Input_ui-item
+              span.ui-Input_label Хорошие отзывы
+            .s-ListFilter_b-Section_actions
+              button.btn.mt-4(data-toggle="collapse" href="#collapseDiscipline" role="button" aria-expanded="false" aria-controls="collapseDiscipline") Применить
+ 
+    .row.cards 
+      -var n = 6
+      while n--
+        .col-md-4.col-6.mb-md-5.mb-4 
+          .card 
+            a.card-t(href="#") 
+              img.card-t__img(src="https://images.cdn.inmyroom.ru/inmyroom/resize/380x380/jpg:85/uploads/photo/file/0c/0c20/jpg_1000_0c20400e-4565-4c33-b241-683f12c0bc10.JPG?sign=63dd9c6bae2edb28ee26514599d1206ff5749e357a5f99b4b5affa8820a7e0fc", alt="img")
+              .bg-overlay
+            .card-b 
+              p.card-b__pink 1000 Р / 1кг
+              a.card-b__title(href="#") Ванильные капкейки
+              p.card-b__text С ягодной начинкой или домашней карамелью
+              .d-flex.justify-content-between 
+                a.d-flex.align-items-center(href="#") 
+                  span.card-b__brand
+                    img.card-b__brand-img(src="https://images.cdn.inmyroom.ru/inmyroom/resize/380x380/jpg:85/uploads/photo/file/0c/0c20/jpg_1000_0c20400e-4565-4c33-b241-683f12c0bc10.JPG?sign=63dd9c6bae2edb28ee26514599d1206ff5749e357a5f99b4b5affa8820a7e0fc", alt="brand")
+                    span.bg-overlay
+                  span.card-b__brand-name Имя Брэнда
+                .d-flex.align-items-center 
+                  img.card-b__status-img.mr-1(src="assets/img/delivery-truck.svg", alt="truck" width="30px" height="20px")
+                  p.card-b__status-text.c-blue-color
+                    span.d-lg-inline.d-none могут 
+                    | доставить
+
+
 block script
