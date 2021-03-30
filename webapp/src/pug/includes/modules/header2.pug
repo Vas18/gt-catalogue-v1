@@ -2,7 +2,7 @@ header.header
     .header-top
         .container
             .d-flex.align-items-center.justify-content-between
-                button.s-Topbar_b-Location.collapsed(data-toggle="collapse" href="#collapseCity" role="button" aria-expanded="false" aria-controls="collapseCity")
+                .s-Topbar_b-Location.collapsed(data-toggle="collapse" href="#collapseCity" role="button" aria-expanded="false" aria-controls="collapseCity") 
                     img.mr-1(src="assets/img/placeholder-filled-point.svg", alt="point" width="12px" height="15px")
                     | Москва
                 ul.navbar-t
@@ -26,7 +26,7 @@ header.header
                         li.nav-item.d-lg-none
                             a.nav-link(href='#') ЗКАЗАТЬ ТОВАР
                 a#sign-in.btn.ml-5(href="#") ВОЙТИ
-                button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation') МЕНЮ
+                button.navbar-toggler.collapsed(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation') МЕНЮ
                     img.navbar-toggler-icon(src="assets/img/burger.png" alt="burger")
 
 
@@ -35,7 +35,7 @@ nav#navbarNav.collapse
         .d-flex
             a.btn.mr-4(href="#") ВОЙТИ
             a.btn-pink(href="#") РЕГИСТРАЦИЯ
-        button.close(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+        button.close.collapsed(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
             img(src="assets/img/close-menu.png" alt="close")
     .s-Navbar_b-Wrapper
         .s-Navbar_b-Nav#accordion
@@ -3938,40 +3938,36 @@ nav#navbarNav.collapse
 
       .s-Tapbar_b-Action_title Войти
 
-.popup_l#collapseCity
-    
-    form.popup_container
-        button.btn-close(data-toggle="collapse" href="#collapseCity" role="button" aria-expanded="false" aria-controls="collapseCity")
-            img(src="assets/img/close.png", alt="close")
-        p.popup_l-title Выберете ваш город
-        #accordion.pb-3
-            .row.popup_l-cities.isActive
-                each val, index in ['Москва','Санкт-Петербург','Екатеринбург','Краснодар','Новосибирск','Ростов-на-Дону','Казань','Самара','Краснодар','Новосибирск','Ростов-на-Дону','Казань','Самара']
-                    .col-sm-4
-                        a.popup_l-city(href="#")=val
-            .row.popup_l-cities
-                each val in ['Киев','Харьков','Запорожье','Львов','Житомир','Полтава','Энергодар','Мариуполь','Одесса','Ивано-Франковск','Днепр','Ивано-Франковск','Днепр']
-                    .col-sm-4
-                        a.popup_l-city(href="#")=val
-            .row.popup_l-cities
-                each val in ['Пинск','Брест','Полоцк','Гродно','Минск','Витебск','Бобруйск','Полоцк','Гродно','Минск','Витебск','Бобруйск','Минск','Витебск','Бобруйск']
-                    .col-sm-4
-                        a.popup_l-city(href="#")=val
-        p.fs-14.fw-semi.c-brow.pb-3 Не нали ваш город в списке? Введите ниже
-        .d-flex.scroll-x
-            button.mb-3.popup_l-btn.isActive(type="button" data-autocomplete="js-easyAutocomplete1" data-url="russia.json") Россия
-            button.mb-3.popup_l-btn(type="button" data-autocomplete="js-easyAutocomplete2" data-url="ukraine.json") Украина
-            button.mb-3.popup_l-btn(type="button" data-autocomplete="js-easyAutocomplete3" data-url="belarus.json") Беларусь
-        
-        .relative 
-            label.input_label Город
-            input.input_city#js-easyAutocomplete1(type="text" required)
-        
-        .pt-3.d-flex.justify-content-end 
-            button.action-btn(type="reset") Отмена
-            button.action-btn.action-apply.ml-4(type="submit") Сохранить
-
-
-   
-
+.popup_l#collapseCity.collapse
+    .overlay.collapsed(data-toggle="collapse" href="#collapseCity" role="button" aria-expanded="false" aria-controls="collapseCity")
+    .popup_l_center
+        form.popup_container
+            button.btn-close.collapsed(data-toggle="collapse" href="#collapseCity" role="button" aria-expanded="false" aria-controls="collapseCity")
+                img(src="assets/img/close.png", alt="close")
+            p.popup_l-title Выберете ваш город
+            #accordion.pb-3
+                .row.popup_l-cities.isActive
+                    each val, index in ['Москва','Санкт-Петербург','Екатеринбург','Краснодар','Новосибирск','Ростов-на-Дону','Казань','Самара','Краснодар','Новосибирск','Ростов-на-Дону','Казань','Самара']
+                        .col-sm-4
+                            a.popup_l-city(href="#")=val
+                .row.popup_l-cities
+                    each val in ['Киев','Харьков','Запорожье','Львов','Житомир','Полтава','Энергодар','Мариуполь','Одесса','Ивано-Франковск','Днепр','Ивано-Франковск','Днепр']
+                        .col-sm-4
+                            a.popup_l-city(href="#")=val
+                .row.popup_l-cities
+                    each val in ['Пинск','Брест','Полоцк','Гродно','Минск','Витебск','Бобруйск','Полоцк','Гродно','Минск','Витебск','Бобруйск','Минск','Витебск','Бобруйск']
+                        .col-sm-4
+                            a.popup_l-city(href="#")=val
+            p.fs-14.fw-semi.c-brow.pb-3 Не нали ваш город в списке? Введите ниже
+            .d-flex.scroll-x
+                button.mb-3.popup_l-btn.isActive(type="button" data-autocomplete="js-easyAutocomplete1" data-url="russia.json") Россия
+                button.mb-3.popup_l-btn(type="button" data-autocomplete="js-easyAutocomplete2" data-url="ukraine.json") Украина
+                button.mb-3.popup_l-btn(type="button" data-autocomplete="js-easyAutocomplete3" data-url="belarus.json") Беларусь
             
+            .relative 
+                label.input_label Город
+                input.input_city#js-easyAutocomplete1(type="text")
+            
+            .pt-3.d-flex.justify-content-end 
+                button.action-btn.collapsed(data-toggle="collapse" href="#collapseCity" role="button" aria-expanded="false" aria-controls="collapseCity") Отмена
+                button.action-btn.action-apply.ml-4(type="submit") Сохранить

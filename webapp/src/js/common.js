@@ -2,6 +2,20 @@
 // global.jQuery = $;
 // global.$ = $;
 $(document).ready(function () {
+    $(".stopPropagation").click(function (e) {
+        e.stopPropagation();
+    });
+
+    // close on window
+    $(window).click(function () {
+        $("#collapseDiscipline").removeClass("show");
+        $("[href='collapseDiscipline']").addClass("collapsed");
+    });
+
+    $(".s-Topbar_b-Location").click(function () {
+        $("#collapseCity").addClass("active");
+    });
+    // tabs switching in menu
     $(".s-Navbar_b-Tab").click(function () {
         $(".s-Navbar_b-Root").removeClass("isActive");
         $(".s-Navbar_b-Nav_wrapper").addClass("isActive");
@@ -35,8 +49,6 @@ $(document).ready(function () {
 
 
     });
-
-  
 
     $(".popup_l-btn").click(function () {
         let index = $(this).index(),

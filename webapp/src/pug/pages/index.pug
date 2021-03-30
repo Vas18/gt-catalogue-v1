@@ -63,13 +63,13 @@ block content
       while n--
         a.btn-category.mb-2(href="#") Поисковый запрос 1
 
-    button.btn.btn-filter.ml-auto.my-3.d-sm-none.d-block(data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter") ФИЛЬТР
+    button.btn.btn-filter.ml-auto.my-3.d-sm-none.d-block.collapsed(data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter") ФИЛЬТР
     
     .b-Filter#collapseFilter.py-sm-5.collapse 
       .b-Filter_container.d-sm-flex
         .d-sm-none
           .d-flex.justify-content-end
-            button.b-Filter_close(data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter")
+            button.b-Filter_close.collapsed(data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter")
               img(src="assets/img/close.png", alt="close")
           h2.title2.mb-4 Параметры
         .s-ListFilter_b-Section
@@ -86,34 +86,35 @@ block content
             .d-sm-none
               img.arrow-toggle(src="assets/img/arrow-right.svg", alt="arrow" width="14px" height="14px")
           .s-ListFilter_b-Section_content.s-ListFilter_b-Field_content#collapseDiscipline.collapse
-            h4.s-ListFilter_b-Section_title(data-toggle="collapse" href="#collapseDiscipline" role="button" aria-expanded="false" aria-controls="collapseDiscipline") Порядок
-            label.d-flex.align-items-center
-              input.ui-Input_input(type="radio" name="radio")
-              span.ui-Input_ui-item
-              span.ui-Input_label Популярное
-                
-            label.d-flex.align-items-center
-              input.ui-Input_input(type="radio" name="radio")
-              span.ui-Input_ui-item
-              span.ui-Input_label Новинки
-            label.d-flex.align-items-center
-              input.ui-Input_input(type="radio" name="radio")
-              span.ui-Input_ui-item
-              span.ui-Input_label Сначала дешевые
-            label.d-flex.align-items-center
-              input.ui-Input_input(type="radio" name="radio")
-              span.ui-Input_ui-item
-              span.ui-Input_label Сначала дорогие
-            label.d-flex.align-items-center
-              input.ui-Input_input(type="radio" name="radio")
-              span.ui-Input_ui-item
-              span.ui-Input_label По размеру скидки
-            label.d-flex.align-items-center
-              input.ui-Input_input(type="radio" name="radio")
-              span.ui-Input_ui-item
-              span.ui-Input_label Хорошие отзывы
+            h4.s-ListFilter_b-Section_title.collapsed(data-toggle="collapse" href="#collapseDiscipline" role="button" aria-expanded="false" aria-controls="collapseDiscipline") Порядок
+            .stopPropagation
+              label.d-flex.align-items-center
+                input.ui-Input_input(type="radio" name="radio")
+                span.ui-Input_ui-item
+                span.ui-Input_label Популярное
+                  
+              label.d-flex.align-items-center
+                input.ui-Input_input(type="radio" name="radio")
+                span.ui-Input_ui-item
+                span.ui-Input_label Новинки
+              label.d-flex.align-items-center
+                input.ui-Input_input(type="radio" name="radio")
+                span.ui-Input_ui-item
+                span.ui-Input_label Сначала дешевые
+              label.d-flex.align-items-center
+                input.ui-Input_input(type="radio" name="radio")
+                span.ui-Input_ui-item
+                span.ui-Input_label Сначала дорогие
+              label.d-flex.align-items-center
+                input.ui-Input_input(type="radio" name="radio")
+                span.ui-Input_ui-item
+                span.ui-Input_label По размеру скидки
+              label.d-flex.align-items-center
+                input.ui-Input_input(type="radio" name="radio")
+                span.ui-Input_ui-item
+                span.ui-Input_label Хорошие отзывы
             .s-ListFilter_b-Section_actions
-              button.btn.mt-4(data-toggle="collapse" href="#collapseDiscipline" role="button" aria-expanded="false" aria-controls="collapseDiscipline") Применить
+              button.btn.mt-4.collapsed(data-toggle="collapse" href="#collapseDiscipline" role="button" aria-expanded="false" aria-controls="collapseDiscipline") Применить
  
     .row.cards 
       -var n = 6

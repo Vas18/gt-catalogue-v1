@@ -193,6 +193,7 @@ input:not([type=checkbox]):not([type=radio]), textarea {
         position: relative;
         display: block;
         height: 40px;
+        margin-bottom: 30px;
         &:before {
             content: '';
             width: 20px;
@@ -252,8 +253,7 @@ input:not([type=checkbox]):not([type=radio]), textarea {
     }
     &_b-TabPanel {
         position: relative;
-        display: none;
-        padding: 30px 15px 0 15px;
+        padding: 0 15px;
         overflow: hidden;
         &.show {
             display: block;
@@ -264,7 +264,7 @@ input:not([type=checkbox]):not([type=radio]), textarea {
         width: 100%;
         height: auto;
         padding-bottom: 80px;
-        transition: transform .3s;
+        transition: all 0s, transform .3s;
         will-change: transform;
         &.__root {
             position: relative;
@@ -277,7 +277,6 @@ input:not([type=checkbox]):not([type=radio]), textarea {
         }
         &.__currentLevel {
             display: block;
-            -webkit-transform: translateX(0);
             transform: translateX(0);
         }
         &_controls {
