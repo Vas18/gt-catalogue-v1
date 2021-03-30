@@ -4,15 +4,12 @@
 }
 
 .b-Filter {
-    overflow-y: auto;
     display: flex!important;
     &_close {
         @include box(25px);
-        margin-left: auto;
+        margin-right: -15px;
         display: block;
-        img {
-            margin-left: 15px;
-        }
+       
     }
     ._title {
         display: block;
@@ -96,8 +93,8 @@
             text-overflow: ellipsis;
             cursor: pointer;
             background: #FFFFFF;
-            box-shadow: 0px 1px 3px #C8C8C8;
             border-radius: 9px;
+            box-shadow: 0px 1px 3px #C8C8C8;
         }
     }
 } 

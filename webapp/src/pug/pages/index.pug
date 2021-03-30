@@ -68,13 +68,14 @@ block content
     .b-Filter#collapseFilter.py-sm-5.collapse 
       .b-Filter_container.d-sm-flex
         .d-sm-none
-          button.b-Filter_close(data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter")
-            img(src="assets/img/close.png", alt="close")
+          .d-flex.justify-content-end
+            button.b-Filter_close(data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter")
+              img(src="assets/img/close.png", alt="close")
           h2.title2.mb-4 Параметры
         .s-ListFilter_b-Section
-          .s-ListFilter_b-Section_toggle
-            .d-flex
-              img.mr-2(src="assets/img/placeholder-filled-point.svg", alt="point" width="18px" height="20px")
+          .s-ListFilter_b-Section_toggle.collapsed(data-toggle="collapse" href="#collapseCity" role="button" aria-expanded="false" aria-controls="collapseCity")
+            .d-flex.align-items-center
+              img.mr-2(src="assets/img/placeholder-filled-point.svg", alt="point" width="30px" height="30px")
               div
                 ._title ВАШ ГОРОД
                 ._choice МОСКВА
@@ -137,6 +138,3 @@ block content
                   p.card-b__status-text.c-blue-color
                     span.d-lg-inline.d-none могут 
                     | доставить
-
-
-block script

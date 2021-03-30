@@ -1,6 +1,6 @@
-import $ from 'jquery';
-global.jQuery = $;
-global.$ = $;
+// import $ from 'jquery';
+// global.jQuery = $;
+// global.$ = $;
 $(document).ready(function () {
     $(".s-Navbar_b-Tab").click(function () {
         $(".s-Navbar_b-Root").removeClass("isActive");
@@ -36,5 +36,53 @@ $(document).ready(function () {
 
     });
 
+  
+
+    $(".popup_l-btn").click(function () {
+        let index = $(this).index(),
+            dataAutocomplete = $(this).data("autocomplete");
+
+        $(this).addClass("isActive").siblings().removeClass("isActive");
+        $(".popup_l-cities").eq(index).addClass("isActive").siblings().removeClass("isActive");
+        $(".input_city").attr("id",dataAutocomplete);
+        
+        $("#js-easyAutocomplete1").easyAutocomplete(optionsRu);
+        $("#js-easyAutocomplete2").easyAutocomplete(optionsUk);
+        $("#js-easyAutocomplete3").easyAutocomplete(optionsB);
+
+    });
+
+    let optionsRu = {
+        url: "russia.json",
+        getValue: "city",
+        list: {
+            maxNumberOfElements: 4,
+            match: {
+                enabled: true
+            }
+        }
+    };
+    let optionsB = {
+        url: "belarus.json",
+        getValue: "city",
+        list: {
+            maxNumberOfElements: 4,
+            match: {
+                enabled: true
+            }
+        }
+    };
+    let optionsUk = {
+        url: "ukraine.json",
+        getValue: "city",
+        list: {
+            maxNumberOfElements: 4,
+            match: {
+                enabled: true
+            }
+        }
+    };
+
+    $("#js-easyAutocomplete1").easyAutocomplete(optionsRu);
 
 });

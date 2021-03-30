@@ -281,4 +281,41 @@
   .cards .col-6 {
     padding: 0 10px;
   }
+  .popup_l-cities {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 0 0 15px 0;
+    margin: 0;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    div {
+      width: fit-content;
+      padding: 0;
+      margin-right: 10px;
+      white-space: nowrap;
+    }
+  }
+  .popup_l-city {
+    padding: 5px 10px;
+    color: #1e5bf7;
+    white-space: nowrap;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+  }
+  .popup_container {
+    padding: 20px;
+  }
+  .popup_l-btn {
+    margin-right: 10px;
+  }
+  .s-ListFilter_b-Section_toggle, .s-ListFilter_b-Section_toggle {
+    box-shadow: none;
+    &.collapsed {
+      box-shadow: 0 1px 3px #c8c8c8;
+    }
+  }
+  .navbar-t_link {
+    font-size: 14px;
+  }
 }

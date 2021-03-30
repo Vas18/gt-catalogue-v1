@@ -19,26 +19,37 @@ module.exports = {
   externals: {
     paths: PATHS
   },
-  // entry: {
-  //   app: PATHS.src,
-  //   lk: `${PATHS.src}/lk.js`
-  // },
+  entry: {
+    // jquery: `${PATHS.src}/js/jquery-3.6.min.js`,
+    vendor: `${PATHS.src}/index.js`,
+    common: `${PATHS.src}/js/common.js`,
+    // jquery: `${PATHS.src}/js/jquery-3.6.min.js`,
+    // app: PATHS.src,
+    // lk: `${PATHS.src}/lk.js`,
+    // css: `${PATHS.src}/assets/css/index.css`,
+    // vendor: `${PATHS.src}/index.js`,
+    // autocomplete: `${PATHS.src}/js/easy-autocomplete.min.js`,
+    // bootstrap: `${PATHS.src}/js/bootstrap.min.js`,
+
+  },
   output: {
+    
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist
+    
   },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          name: "vendors",
-          test: /node_modules/,
-          chunks: "all",
-          enforce: true
-        }
-      }
-    }
-  },
+  // optimization: {
+  //   splitChunks: {
+  //     cacheGroups: {
+  //       vendor: {
+  //         name: "vendors",
+  //         test: PATHS.src,
+  //         chunks: "all",
+  //         enforce: true
+  //       }
+  //     }
+  //   }
+  // },
   module: {
     rules: [
       {
@@ -103,13 +114,16 @@ module.exports = {
     new CopyWebpackPlugin([
       {from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img`},
       {from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts`},
+      {from: `${PATHS.src}/js/jquery-3.6.min.js`, to: `${PATHS.assets}js`},
+      // {from: `${PATHS.src}/${PATHS.assets}css`, to: `${PATHS.assets}css/[name].[hash].css`},
       {from: `${PATHS.src}/static`, to: ""}
     ]),
     // new webpack.ProvidePlugin({
     //   $: 'jquery',
     //   jQuery: 'jquery',
+    //   'window.jQuery': 'jquery'
     // }),
-
+   
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.replace(/\.pug/, ".html")}`

@@ -41,7 +41,8 @@
     padding-right: 0;
     &-icon {
         background: url("../img/burger.png") no-repeat center/ contain;
-        @include box(30px)
+        @include box(30px);
+        flex-shrink: 0;
     }
 }
 
@@ -53,7 +54,7 @@
     height: 100%;
     padding: 15px;
     background: #F4F2EE;
-    z-index: 9;
+    z-index: 10;
     transform: translateY(100vh);
     transition: transform .15s;
     .btn {
@@ -90,12 +91,11 @@ input:not([type=checkbox]):not([type=radio]), textarea {
         height: 100%;
     }
     &_b-TabBar {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         padding: 0 20px;
     }
     &_b-Tab {
+        appearance: none;
         display: flex;
         flex: 1 1 auto;
         flex-direction: column;
@@ -272,6 +272,7 @@ input:not([type=checkbox]):not([type=radio]), textarea {
                 position: absolute;
                 top: 0;
                 left: 100vw;
+                height: 100%;
             }
         }
         &.__currentLevel {
@@ -490,7 +491,7 @@ input:not([type=checkbox]):not([type=radio]), textarea {
 }
 .s-Navbar_b-Level.__currentLevel {
     z-index: 6;
-    height: 100%;
+    // height: 100%;
     transform: translateX(0);
     &.lv-1, &.lv-2, &.lv-3, &.lv-4 {
         left: 0;
@@ -596,14 +597,6 @@ input:not([type=checkbox]):not([type=radio]), textarea {
     cursor: pointer;
     font-size: 12px;
     line-height: 1;
-    &:before {
-        @include box(14px);
-        // background: url(svg-icons/shared/location__brand.bfede3a3.svg) no-repeat center / contain;
-        display: inline-block;
-        flex-shrink: 0;
-        margin-right: 5px;
-        content: '';
-    }
 }
 
 .navbar-t {

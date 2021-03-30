@@ -2,7 +2,7 @@ header.header
     .header-top
         .container
             .d-flex.align-items-center.justify-content-between
-                button.s-Topbar_b-Location(type='button')
+                button.s-Topbar_b-Location.collapsed(data-toggle="collapse" href="#collapseCity" role="button" aria-expanded="false" aria-controls="collapseCity")
                     img.mr-1(src="assets/img/placeholder-filled-point.svg", alt="point" width="12px" height="15px")
                     | Москва
                 ul.navbar-t
@@ -3937,3 +3937,41 @@ nav#navbarNav.collapse
             path(d='m12 23c-4.655 0-8.823-2.947-10.372-7.333-.092-.261.045-.546.305-.638.261-.09.546.045.638.305 1.408 3.987 5.197 6.666 9.429 6.666 5.514 0 10-4.486 10-10s-4.486-10-10-10c-4.232 0-8.021 2.679-9.428 6.667-.092.26-.378.395-.638.305-.26-.092-.397-.377-.305-.638 1.548-4.387 5.716-7.334 10.371-7.334 6.065 0 11 4.935 11 11s-4.935 11-11 11z')
 
       .s-Tapbar_b-Action_title Войти
+
+.popup_l#collapseCity
+    
+    form.popup_container
+        button.btn-close(data-toggle="collapse" href="#collapseCity" role="button" aria-expanded="false" aria-controls="collapseCity")
+            img(src="assets/img/close.png", alt="close")
+        p.popup_l-title Выберете ваш город
+        #accordion.pb-3
+            .row.popup_l-cities.isActive
+                each val, index in ['Москва','Санкт-Петербург','Екатеринбург','Краснодар','Новосибирск','Ростов-на-Дону','Казань','Самара','Краснодар','Новосибирск','Ростов-на-Дону','Казань','Самара']
+                    .col-sm-4
+                        a.popup_l-city(href="#")=val
+            .row.popup_l-cities
+                each val in ['Киев','Харьков','Запорожье','Львов','Житомир','Полтава','Энергодар','Мариуполь','Одесса','Ивано-Франковск','Днепр','Ивано-Франковск','Днепр']
+                    .col-sm-4
+                        a.popup_l-city(href="#")=val
+            .row.popup_l-cities
+                each val in ['Пинск','Брест','Полоцк','Гродно','Минск','Витебск','Бобруйск','Полоцк','Гродно','Минск','Витебск','Бобруйск','Минск','Витебск','Бобруйск']
+                    .col-sm-4
+                        a.popup_l-city(href="#")=val
+        p.fs-14.fw-semi.c-brow.pb-3 Не нали ваш город в списке? Введите ниже
+        .d-flex.scroll-x
+            button.mb-3.popup_l-btn.isActive(type="button" data-autocomplete="js-easyAutocomplete1" data-url="russia.json") Россия
+            button.mb-3.popup_l-btn(type="button" data-autocomplete="js-easyAutocomplete2" data-url="ukraine.json") Украина
+            button.mb-3.popup_l-btn(type="button" data-autocomplete="js-easyAutocomplete3" data-url="belarus.json") Беларусь
+        
+        .relative 
+            label.input_label Город
+            input.input_city#js-easyAutocomplete1(type="text" required)
+        
+        .pt-3.d-flex.justify-content-end 
+            button.action-btn(type="reset") Отмена
+            button.action-btn.action-apply.ml-4(type="submit") Сохранить
+
+
+   
+
+            
