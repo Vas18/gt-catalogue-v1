@@ -2,7 +2,7 @@ header.header
     .header-top
         .container
             .d-flex.align-items-center.justify-content-between
-                .s-Topbar_b-Location.collapsed(data-toggle="collapse" href="#collapseCity" role="button" aria-expanded="false" aria-controls="collapseCity") 
+                .s-Topbar_b-Location.collapsed(type='button' data-toggle='collapse' data-target='#collapseCity' aria-controls='collapseCity' aria-expanded='false')
                     img.mr-1(src="assets/img/placeholder-filled-point.svg", alt="point" width="12px" height="15px")
                     | Москва
                 ul.navbar-t
@@ -43,10 +43,10 @@ nav#navbarNav.collapse
                 a.s-Navbar_b-Tab.collapsed(href="#")
                     img.s-Navbar_b-Tab_icon.__main(src="assets/img/home.svg" alt="home")
                     span.s-Navbar_b-Tab_title Главная
-                .s-Navbar_b-Tab#headingOne.collapsed(type='button' data-toggle='collapse' data-target='#ideas' aria-controls='ideas' aria-expanded='false' aria-label='Toggle navigation')
+                .s-Navbar_b-Tab.s-Navbar_b-Tab-item(data-tab="ideas")
                     img.s-Navbar_b-Tab_icon.__posts(src="assets/img/photo-camera.svg" alt="photo-camera")
                     span.s-Navbar_b-Tab_title Идеи
-                .s-Navbar_b-Tab#headingTwo.collapsed(type='button' data-toggle='collapse' data-target='#products' aria-controls='products' aria-expanded='true' aria-label='Toggle navigation')
+                .s-Navbar_b-Tab.s-Navbar_b-Tab-item(data-tab="products")
                     img.s-Navbar_b-Tab_icon.__products(src="assets/img/sofa.svg" alt="sofa")
                     span.s-Navbar_b-Tab_title Товары
                 a.s-Navbar_b-Tab.collapsed(href="#")
@@ -68,7 +68,7 @@ nav#navbarNav.collapse
                     form.s-Navbar_b-Search(action="")
                         input.s-Navbar_b-Search_input(type='text' name='q' autocomplete='off' placeholder='Поиск')
                         button.s-Navbar_b-Search_submit(type='submit' value='')
-                    .s-Navbar_b-TabPanel#ideas.collapse(data-current-level="0" aria-labelledby="headingOne" data-parent="#accordion")
+                    .s-Navbar_b-TabPanel(data-panel="ideas")
                         .s-Navbar_b-Level.__currentLevel.__root(data-level="0")
                             .s-Navbar_b-LevelSection
                                 .s-Navbar_b-LevelSection_title &Kcy;&ocy;&mcy;&ncy;&acy;&tcy;&ycy;
@@ -382,7 +382,7 @@ nav#navbarNav.collapse
                                         a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink(href='https://www.inmyroom.ru/photos/prikhozhaya')
                                             .s-Navbar_b-NavLink_content
                                                 span.s-Navbar_b-NavLink_title(style='') &Pcy;&rcy;&icy;&khcy;&ocy;&zhcy;&acy;&yacy;
-                    .s-Navbar_b-TabPanel#products.collapse(data-current-level='0' aria-labelledby="headingTwo" data-parent="#accordion")
+                    .s-Navbar_b-TabPanel(data-panel="products")
                         .s-Navbar_b-Level.__currentLevel.__root(data-level='0')
                             .s-Navbar_b-LevelSection
                                 .s-Navbar_b-LevelSection_title &tcy;&ocy;&pcy;-&kcy;&acy;&tcy;&iecy;&gcy;&ocy;&rcy;&icy;&icy;
@@ -3939,10 +3939,10 @@ nav#navbarNav.collapse
       .s-Tapbar_b-Action_title Войти
 
 .popup_l#collapseCity.collapse
-    .overlay.collapsed(data-toggle="collapse" href="#collapseCity" role="button" aria-expanded="false" aria-controls="collapseCity")
+    .overlay.collapsed(type='button' data-toggle='collapse' data-target='#collapseCity' aria-controls='collapseCity' aria-expanded='false')
     .popup_l_center
         form.popup_container
-            button.btn-close.collapsed(data-toggle="collapse" href="#collapseCity" role="button" aria-expanded="false" aria-controls="collapseCity")
+            button.btn-close.collapsed(type='button' data-toggle='collapse' data-target='#collapseCity' aria-controls='collapseCity' aria-expanded='false')
                 img(src="assets/img/close.png", alt="close")
             p.popup_l-title Выберете ваш город
             #accordion.pb-3
@@ -3969,5 +3969,5 @@ nav#navbarNav.collapse
                 input.input_city#js-easyAutocomplete1(type="text")
             
             .pt-3.d-flex.justify-content-end 
-                button.action-btn.collapsed(data-toggle="collapse" href="#collapseCity" role="button" aria-expanded="false" aria-controls="collapseCity") Отмена
+                button.action-btn.collapsed(type='button' data-toggle='collapse' data-target='#collapseCity' aria-controls='collapseCity' aria-expanded='false') Отмена
                 button.action-btn.action-apply.ml-4(type="submit") Сохранить

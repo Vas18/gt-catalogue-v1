@@ -27,10 +27,10 @@ nav#navbarNav.collapse
         a.s-Navbar_b-Tab.collapsed(href="#")
           img.s-Navbar_b-Tab_icon.__main(src="assets/img/home.svg" alt="home")
           span.s-Navbar_b-Tab_title Главная
-        .s-Navbar_b-Tab#headingOne.collapsed(type='button' data-toggle='collapse' data-target='#ideas' aria-controls='ideas' aria-expanded='false' aria-label='Toggle navigation')
+        .s-Navbar_b-Tab.s-Navbar_b-Tab-item(data-tab="ideas")
           img.s-Navbar_b-Tab_icon.__posts(src="assets/img/photo-camera.svg" alt="photo-camera")
           span.s-Navbar_b-Tab_title Идеи
-        .s-Navbar_b-Tab#headingTwo.collapsed(type='button' data-toggle='collapse' data-target='#products' aria-controls='products' aria-expanded='true' aria-label='Toggle navigation')
+        .s-Navbar_b-Tab.s-Navbar_b-Tab-item(data-tab="products")
           img.s-Navbar_b-Tab_icon.__products(src="assets/img/sofa.svg" alt="sofa")
           span.s-Navbar_b-Tab_title Товары
         a.s-Navbar_b-Tab.collapsed(href="#")
@@ -52,7 +52,7 @@ nav#navbarNav.collapse
           form.s-Navbar_b-Search(action="")
             input.s-Navbar_b-Search_input(type='text' name='q' autocomplete='off' placeholder='Поиск')
             button.s-Navbar_b-Search_submit(type='submit' value='')
-          .s-Navbar_b-TabPanel#ideas.collapse(data-current-level="0" aria-labelledby="headingOne" data-parent="#accordion")
+          .s-Navbar_b-TabPanel(data-panel="ideas")
             .s-Navbar_b-Level.__currentLevel.__root(data-level="0")
               .s-Navbar_b-LevelSection
                 .s-Navbar_b-LevelSection_title &Kcy;&ocy;&mcy;&ncy;&acy;&tcy;&ycy;
@@ -366,7 +366,7 @@ nav#navbarNav.collapse
                     a.s-Navbar_b-NavItem_link.s-Navbar_b-NavLink(href='https://www.inmyroom.ru/photos/prikhozhaya')
                       .s-Navbar_b-NavLink_content
                         span.s-Navbar_b-NavLink_title(style='') &Pcy;&rcy;&icy;&khcy;&ocy;&zhcy;&acy;&yacy;
-          .s-Navbar_b-TabPanel#products.collapse(data-current-level='0' aria-labelledby="headingTwo" data-parent="#accordion")
+          .s-Navbar_b-TabPanel(data-panel="products")
             .s-Navbar_b-Level.__currentLevel.__root(data-level='0')
               .s-Navbar_b-LevelSection
                 .s-Navbar_b-LevelSection_title &tcy;&ocy;&pcy;-&kcy;&acy;&tcy;&iecy;&gcy;&ocy;&rcy;&icy;&icy;
@@ -3877,6 +3877,7 @@ nav#navbarNav.collapse
                                                 .s-Navbar_b-NavLink_icon(style='background-image: url("https://cdn.inmyroom.ru/uploads/commerce_category/thumbnail/42/4246/424636ff-e165-426d-a0fd-bc47f6384ff1.jpg");')
                                                 span.s-Navbar_b-NavLink_title(style='') &SHcy;&tcy;&ocy;&rcy;&kcy;&icy; &dcy;&lcy;&yacy; &dcy;&ucy;&shcy;&acy;
 
+
 .s-Tapbar
   .s-Tapbar_b-Actions
     a.s-Tapbar_b-Action.__home.isActive(href='https://www.inmyroom.ru/')
@@ -3891,32 +3892,32 @@ nav#navbarNav.collapse
         s-17-7.626-17-17S14.61,6,23.984,6z')
       .s-Tapbar_b-Action_title Меню
     a.s-Tapbar_b-Action.__cart(data-controller='CartItemsCounter' data-props='{}' href='https://www.inmyroom.ru/cart' data-controller-inited='true' data-items-count='0')
-      
+
       svg.s-Tapbar_b-Action_icon(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 511.997 511.997' style='enable-background:new 0 0 511.997 511.997;' xml:space='preserve')
         g
-            g
-            path(d='M405.387,362.612c-35.202,0-63.84,28.639-63.84,63.84s28.639,63.84,63.84,63.84s63.84-28.639,63.84-63.84\
-            S440.588,362.612,405.387,362.612z M405.387,451.988c-14.083,0-25.536-11.453-25.536-25.536s11.453-25.536,25.536-25.536\
-            c14.083,0,25.536,11.453,25.536,25.536S419.47,451.988,405.387,451.988z')
+          g
+          path(d='M405.387,362.612c-35.202,0-63.84,28.639-63.84,63.84s28.639,63.84,63.84,63.84s63.84-28.639,63.84-63.84\
+          S440.588,362.612,405.387,362.612z M405.387,451.988c-14.083,0-25.536-11.453-25.536-25.536s11.453-25.536,25.536-25.536\
+          c14.083,0,25.536,11.453,25.536,25.536S419.47,451.988,405.387,451.988z')
         g
-            g
-            path(d='M507.927,115.875c-3.626-4.641-9.187-7.348-15.079-7.348H118.22l-17.237-72.12c-2.062-8.618-9.768-14.702-18.629-14.702\
-            H19.152C8.574,21.704,0,30.278,0,40.856s8.574,19.152,19.152,19.152h48.085l62.244,260.443\
-            c2.062,8.625,9.768,14.702,18.629,14.702h298.135c8.804,0,16.477-6.001,18.59-14.543l46.604-188.329\
-            C512.849,126.562,511.553,120.516,507.927,115.875z M431.261,296.85H163.227l-35.853-150.019h341.003L431.261,296.85z')
+          g
+          path(d='M507.927,115.875c-3.626-4.641-9.187-7.348-15.079-7.348H118.22l-17.237-72.12c-2.062-8.618-9.768-14.702-18.629-14.702\
+          H19.152C8.574,21.704,0,30.278,0,40.856s8.574,19.152,19.152,19.152h48.085l62.244,260.443\
+          c2.062,8.625,9.768,14.702,18.629,14.702h298.135c8.804,0,16.477-6.001,18.59-14.543l46.604-188.329\
+          C512.849,126.562,511.553,120.516,507.927,115.875z M431.261,296.85H163.227l-35.853-150.019h341.003L431.261,296.85z')
         g
-            g
-            path(d='M173.646,362.612c-35.202,0-63.84,28.639-63.84,63.84s28.639,63.84,63.84,63.84s63.84-28.639,63.84-63.84\
-            S208.847,362.612,173.646,362.612z M173.646,451.988c-14.083,0-25.536-11.453-25.536-25.536s11.453-25.536,25.536-25.536\
-            s25.536,11.453,25.536,25.536S187.729,451.988,173.646,451.988z')
+          g
+          path(d='M173.646,362.612c-35.202,0-63.84,28.639-63.84,63.84s28.639,63.84,63.84,63.84s63.84-28.639,63.84-63.84\
+          S208.847,362.612,173.646,362.612z M173.646,451.988c-14.083,0-25.536-11.453-25.536-25.536s11.453-25.536,25.536-25.536\
+          s25.536,11.453,25.536,25.536S187.729,451.988,173.646,451.988z')
       .s-Tapbar_b-Action_title Корзина
     a.s-Tapbar_b-Action.__login(data-gtm-header-register='' data-needs-auth='true' href='#')
       svg.s-Tapbar_b-Action_icon.__enter(enable-background='new 0 0 24 24' height='512' viewbox='0 0 24 24' width='512' xmlns='http://www.w3.org/2000/svg')
         g
-            path(d='m15.5 12.5h-15c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h15c.276 0 .5.224.5.5s-.224.5-.5.5z')
+          path(d='m15.5 12.5h-15c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h15c.276 0 .5.224.5.5s-.224.5-.5.5z')
         g
-            path(d='m11.5 16.5c-.128 0-.256-.049-.354-.146-.195-.195-.195-.512 0-.707l3.647-3.647-3.646-3.646c-.195-.195-.195-.512 0-.707s.512-.195.707 0l4 4c.195.195.195.512 0 .707l-4 4c-.098.097-.226.146-.354.146z')
+          path(d='m11.5 16.5c-.128 0-.256-.049-.354-.146-.195-.195-.195-.512 0-.707l3.647-3.647-3.646-3.646c-.195-.195-.195-.512 0-.707s.512-.195.707 0l4 4c.195.195.195.512 0 .707l-4 4c-.098.097-.226.146-.354.146z')
         g
-            path(d='m12 23c-4.655 0-8.823-2.947-10.372-7.333-.092-.261.045-.546.305-.638.261-.09.546.045.638.305 1.408 3.987 5.197 6.666 9.429 6.666 5.514 0 10-4.486 10-10s-4.486-10-10-10c-4.232 0-8.021 2.679-9.428 6.667-.092.26-.378.395-.638.305-.26-.092-.397-.377-.305-.638 1.548-4.387 5.716-7.334 10.371-7.334 6.065 0 11 4.935 11 11s-4.935 11-11 11z')
+          path(d='m12 23c-4.655 0-8.823-2.947-10.372-7.333-.092-.261.045-.546.305-.638.261-.09.546.045.638.305 1.408 3.987 5.197 6.666 9.429 6.666 5.514 0 10-4.486 10-10s-4.486-10-10-10c-4.232 0-8.021 2.679-9.428 6.667-.092.26-.378.395-.638.305-.26-.092-.397-.377-.305-.638 1.548-4.387 5.716-7.334 10.371-7.334 6.065 0 11 4.935 11 11s-4.935 11-11 11z')
 
       .s-Tapbar_b-Action_title Войти

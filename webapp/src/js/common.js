@@ -20,6 +20,16 @@ $(document).ready(function () {
         $(".s-Navbar_b-Root").removeClass("isActive");
         $(".s-Navbar_b-Nav_wrapper").addClass("isActive");
     });
+    $(".s-Navbar_b-Tab-item").click(function () {
+        let data = $(this).data("tab");
+        $(this).addClass("isActive").siblings().removeClass("isActive");
+        $(".s-Navbar_b-Root").removeClass("isActive");
+        $(".s-Navbar_b-Nav_wrapper").addClass("isActive");
+
+        $('[data-panel="' + data +'"]').addClass("isActive").siblings().removeClass("isActive");
+
+    });
+
 
     $(".s-Navbar_b-NavItem_link").click(function () {
         $(this).siblings().addClass("__currentLevel");
